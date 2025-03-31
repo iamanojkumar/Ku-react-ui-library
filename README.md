@@ -1,108 +1,82 @@
-# KU React Design System
+# Ku React UI Library
 
-A comprehensive React component library with a focus on accessibility, performance, and developer experience.
+A modern, accessible, and customizable React component library built with TypeScript and Vite.
 
 ## Features
 
-- 🎨 Modern and consistent design
+- 🎨 Modern and clean design
 - ♿️ Accessible components following WAI-ARIA guidelines
-- 📱 Responsive and mobile-friendly
-- 🌙 Dark mode support
+- 📦 Tree-shakeable components
 - 🎯 TypeScript support
+- 🎭 Theme customization
+- 📱 Responsive design
 - 📚 Storybook documentation
-- 🎭 Multiple component variants
-- 🎨 Customizable theming
 
 ## Installation
 
 ```bash
 npm install @ku-design-system/react
-# or
-yarn add @ku-design-system/react
 ```
 
 ## Quick Start
 
 ```jsx
-import { Button, TextField, Tooltip } from '@ku-design-system/react';
-import '@ku-design-system/react/dist/index.css';
+import { Button, ThemeProvider } from '@ku-design-system/react';
+import '@ku-design-system/react/dist/style.css';
 
 function App() {
   return (
-    <div>
-      <Tooltip content="This is a tooltip">
-        <Button>Hover me</Button>
-      </Tooltip>
-      <TextField label="Username" />
-    </div>
+    <ThemeProvider>
+      <Button>Click me</Button>
+    </ThemeProvider>
   );
 }
 ```
 
-## Components
+## Documentation
 
-### Tooltip
-A tooltip component that provides additional information on hover or focus.
-
-```jsx
-<Tooltip content="This is a tooltip">
-  <button>Hover me</button>
-</Tooltip>
-```
-
-Props:
-- `content`: The content to display in the tooltip
-- `position`: Position of the tooltip ('top' | 'right' | 'bottom' | 'left')
-- `showIcon`: Whether to show an info icon
-- `delay`: Delay in milliseconds before showing the tooltip
-- `className`: Custom className for the tooltip
-- `triggerClassName`: Custom className for the trigger element
-
-Features:
-- Automatic positioning based on viewport
-- Keyboard accessibility
-- Delayed appearance
-- Dark mode support
-- High contrast mode support
-- Reduced motion support
-
-### Other Components
-- Button
-- TextField
-- TextArea
-- Toast
-- Modal
-- Dropdown
-- And many more...
+Visit our [Storybook documentation](https://iamanojkumar.github.io/Ku-react-ui-library) to explore all components and their usage.
 
 ## Development
 
-### Prerequisites
-- Node.js 16+
-- npm or yarn
-
-### Setup
+1. Clone the repository:
 ```bash
-# Install dependencies
+git clone https://github.com/iamanojkumar/Ku-react-ui-library.git
+cd Ku-react-ui-library
+```
+
+2. Install dependencies:
+```bash
 npm install
+```
 
-# Start Storybook
+3. Start Storybook:
+```bash
+cd packages/react
 npm run storybook
+```
 
-# Build the library
+4. Build packages:
+```bash
 npm run build
-
-# Run tests
-npm test
 ```
 
-### Project Structure
+## Project Structure
+
 ```
-src/
-  components/     # React components
-  styles/        # Global styles and tokens
-  utils/         # Utility functions
-  types/         # TypeScript type definitions
+Ku-react-ui-library/
+├── core/                 # Core design system package
+│   ├── src/
+│   │   ├── components/  # Core components
+│   │   ├── styles/      # Core styles and tokens
+│   │   └── utils/       # Utility functions
+│   └── package.json
+├── packages/
+│   └── react/           # React component package
+│       ├── src/         # React components
+│       ├── .storybook/  # Storybook configuration
+│       └── package.json
+└── package.json
 ```
 
 ## Contributing
@@ -121,5 +95,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - [React](https://reactjs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
-- [Storybook](https://storybook.js.org/)
-- [Tabler Icons](https://tabler-icons.io/) 
+- [Vite](https://vitejs.dev/)
+- [Storybook](https://storybook.js.org/) 
