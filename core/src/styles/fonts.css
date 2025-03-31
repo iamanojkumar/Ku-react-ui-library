@@ -1,0 +1,36 @@
+/**
+ * Font Loading and Fallbacks
+ * This file handles the loading of Roboto Flex and provides fallback font configurations
+ */
+
+/* Roboto Flex Font Face Declarations */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/* System Font Fallbacks */
+@supports not (font-variation-settings: normal) {
+  :root {
+    --ku-font-family-base: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    --ku-font-family-heading: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  }
+}
+
+/* Font Loading States */
+.font-loading {
+  font-display: swap;
+}
+
+.font-loaded {
+  font-display: block;
+}
+
+/* Font Feature Settings */
+:root {
+  --font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "pnum" 1, "tnum" 0, "onum" 0, "lnum" 0, "dlig" 0, "hlig" 0, "zero" 0;
+  --font-variation-settings: "wght" 400, "wdth" 100, "slnt" 0, "GRAD" 0, "XTRA" 468, "YOPQ" 90, "YTAS" 750, "YTDE" -180, "YTFI" 738, "YTLC" 514, "YTUC" 712, "opsz" 14;
+}
+
+/* Font Smoothing */
+:root {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+} 

@@ -1,0 +1,91 @@
+:root {
+  /* Font Families */
+  --ku-font-family-base: 'Roboto Flex', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  --ku-font-family-heading: 'Roboto Flex', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  --ku-font-family-mono: 'SF Mono', monospace;
+
+  /* Font Sizes */
+  --ku-font-size-xs: 0.75rem;     /* 12px */
+  --ku-font-size-sm: 0.875rem;    /* 14px */
+  --ku-font-size-base: 1rem;      /* 16px */
+  --ku-font-size-lg: 1.125rem;    /* 18px */
+  --ku-font-size-xl: 1.25rem;     /* 20px */
+  --ku-font-size-2xl: 1.5rem;     /* 24px */
+  --ku-font-size-3xl: 1.875rem;   /* 30px */
+  --ku-font-size-4xl: 2.25rem;    /* 36px */
+  --ku-font-size-5xl: 3rem;       /* 48px */
+  --ku-font-size-6xl: 3.75rem;    /* 60px */
+  --ku-font-size-7xl: 4.5rem;     /* 72px */
+
+  /* Font Weights */
+  --ku-font-weight-thin: 100;
+  --ku-font-weight-extralight: 200;
+  --ku-font-weight-light: 300;
+  --ku-font-weight-normal: 400;
+  --ku-font-weight-medium: 500;
+  --ku-font-weight-semibold: 600;
+  --ku-font-weight-bold: 700;
+  --ku-font-weight-extrabold: 800;
+  --ku-font-weight-black: 900;
+
+  /* Line Heights */
+  --ku-line-height-none: 1;
+  --ku-line-height-tight: 1.25;
+  --ku-line-height-snug: 1.375;
+  --ku-line-height-normal: 1.5;
+  --ku-line-height-relaxed: 1.625;
+  --ku-line-height-loose: 2;
+
+  /* Letter Spacing */
+  --ku-letter-spacing-tight: -0.025em;
+  --ku-letter-spacing-normal: 0;
+  --ku-letter-spacing-wide: 0.025em;
+  --ku-letter-spacing-wider: 0.05em;
+
+  /* Text Styles */
+  --ku-text-h1-size: var(--ku-font-size-5xl);
+  --ku-text-h1-weight: var(--ku-font-weight-bold);
+  --ku-text-h1-line-height: var(--ku-line-height-tight);
+  --ku-text-h1-spacing: var(--ku-letter-spacing-tight);
+
+  --ku-text-h2-size: var(--ku-font-size-4xl);
+  --ku-text-h2-weight: var(--ku-font-weight-bold);
+  --ku-text-h2-line-height: var(--ku-line-height-tight);
+  --ku-text-h2-spacing: var(--ku-letter-spacing-tight);
+
+  --ku-text-h3-size: var(--ku-font-size-3xl);
+  --ku-text-h3-weight: var(--ku-font-weight-semibold);
+  --ku-text-h3-line-height: var(--ku-line-height-snug);
+  --ku-text-h3-spacing: var(--ku-letter-spacing-tight);
+
+  --ku-text-h4-size: var(--ku-font-size-2xl);
+  --ku-text-h4-weight: var(--ku-font-weight-semibold);
+  --ku-text-h4-line-height: var(--ku-line-height-snug);
+  --ku-text-h4-spacing: var(--ku-letter-spacing-tight);
+
+  --ku-text-h5-size: var(--ku-font-size-xl);
+  --ku-text-h5-weight: var(--ku-font-weight-semibold);
+  --ku-text-h5-line-height: var(--ku-line-height-snug);
+
+  --ku-text-h6-size: var(--ku-font-size-lg);
+  --ku-text-h6-weight: var(--ku-font-weight-semibold);
+  --ku-text-h6-line-height: var(--ku-line-height-snug);
+
+  --ku-text-body1-size: var(--ku-font-size-base);
+  --ku-text-body1-weight: var(--ku-font-weight-normal);
+  --ku-text-body1-line-height: var(--ku-line-height-normal);
+
+  --ku-text-body2-size: var(--ku-font-size-sm);
+  --ku-text-body2-weight: var(--ku-font-weight-normal);
+  --ku-text-body2-line-height: var(--ku-line-height-normal);
+
+  --ku-text-caption-size: var(--ku-font-size-xs);
+  --ku-text-caption-weight: var(--ku-font-weight-normal);
+  --ku-text-caption-line-height: var(--ku-line-height-normal);
+
+  --ku-text-button-size: var(--ku-font-size-sm);
+  --ku-text-button-weight: var(--ku-font-weight-medium);
+  --ku-text-button-line-height: var(--ku-line-height-snug);
+  --ku-text-button-spacing: var(--ku-letter-spacing-wide);
+  --ku-text-button-transform: uppercase;
+} 

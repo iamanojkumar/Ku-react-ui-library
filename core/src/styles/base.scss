@@ -1,0 +1,117 @@
+@use 'sass:math';
+
+// Reset and base styles
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  line-height: var(--ku-line-height-normal);
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--ku-font-family-base);
+  color: var(--ku-color-text-primary);
+  background-color: var(--ku-color-background-default);
+}
+
+// Typography
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: var(--ku-spacing-2);
+  font-family: var(--ku-font-family-heading);
+  font-weight: var(--ku-font-weight-semibold);
+  line-height: var(--ku-line-height-tight);
+}
+
+h1 {
+  font-size: var(--ku-font-size-4xl);
+}
+
+h2 {
+  font-size: var(--ku-font-size-3xl);
+}
+
+h3 {
+  font-size: var(--ku-font-size-2xl);
+}
+
+h4 {
+  font-size: var(--ku-font-size-xl);
+}
+
+h5 {
+  font-size: var(--ku-font-size-lg);
+}
+
+h6 {
+  font-size: var(--ku-font-size-base);
+}
+
+p {
+  margin-bottom: var(--ku-spacing-4);
+}
+
+a {
+  color: var(--ku-color-primary-500);
+  text-decoration: none;
+  
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+// Lists
+ul, ol {
+  margin: 0 0 var(--ku-spacing-4) var(--ku-spacing-6);
+}
+
+// Images
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+// Form elements
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  line-height: var(--ku-line-height-normal);
+}
+
+button,
+input {
+  overflow: visible;
+}
+
+button,
+select {
+  text-transform: none;
+}
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+}
+
+// Accessibility
+[hidden] {
+  display: none;
+}
+
+// Focus styles
+:focus {
+  outline: var(--ku-focus-ring-width) solid var(--ku-focus-ring-color);
+  outline-offset: var(--ku-focus-ring-offset);
+} 

@@ -1,0 +1,139 @@
+.ds-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--ds-spacing-2) var(--ds-spacing-4);
+  font-size: var(--ds-font-size-base);
+  font-weight: var(--ds-font-weight-medium);
+  line-height: 1.5;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  cursor: pointer;
+  user-select: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  
+  &:focus {
+    outline: 0;
+    box-shadow: 0 0 0 3px var(--ds-color-primary-300);
+  }
+  
+  &:disabled, &.disabled {
+    opacity: 0.65;
+    pointer-events: none;
+  }
+  
+  // Icon styles
+  .ds-btn-icon {
+    display: inline-flex;
+    align-items: center;
+    
+    &-left {
+      margin-right: var(--ds-spacing-2);
+    }
+    
+    &-right {
+      margin-left: var(--ds-spacing-2);
+    }
+  }
+}
+
+// Button sizes
+.ds-btn-sm {
+  padding: var(--ds-spacing-1) var(--ds-spacing-3);
+  font-size: var(--ds-font-size-sm);
+  border-radius: 3px;
+}
+
+.ds-btn-lg {
+  padding: var(--ds-spacing-3) var(--ds-spacing-6);
+  font-size: var(--ds-font-size-lg);
+  border-radius: 5px;
+}
+
+// Button variants
+.ds-btn-primary {
+  color: var(--ds-color-white);
+  background-color: var(--ds-color-primary-500);
+  border-color: var(--ds-color-primary-500);
+  
+  &:hover, &:active {
+    color: var(--ds-color-white);
+    background-color: var(--ds-color-primary-600);
+    border-color: var(--ds-color-primary-700);
+  }
+}
+
+.ds-btn-secondary {
+  color: var(--ds-color-white);
+  background-color: var(--ds-color-secondary-500);
+  border-color: var(--ds-color-secondary-500);
+  
+  &:hover, &:active {
+    color: var(--ds-color-white);
+    background-color: var(--ds-color-secondary-600);
+    border-color: var(--ds-color-secondary-700);
+  }
+}
+
+.ds-btn-success {
+  color: var(--ds-color-white);
+  background-color: var(--ds-color-success-default);
+  border-color: var(--ds-color-success-default);
+  
+  &:hover, &:active {
+    color: var(--ds-color-white);
+    background-color: var(--ds-color-success-dark);
+    border-color: var(--ds-color-success-dark);
+  }
+}
+
+.ds-btn-danger {
+  color: var(--ds-color-white);
+  background-color: var(--ds-color-error-default);
+  border-color: var(--ds-color-error-default);
+  
+  &:hover, &:active {
+    color: var(--ds-color-white);
+    background-color: var(--ds-color-error-dark);
+    border-color: var(--ds-color-error-dark);
+  }
+}
+
+.ds-btn-outline-primary {
+  color: var(--ds-color-primary-500);
+  background-color: transparent;
+  border-color: var(--ds-color-primary-500);
+  
+  &:hover, &:active {
+    color: var(--ds-color-white);
+    background-color: var(--ds-color-primary-500);
+    border-color: var(--ds-color-primary-500);
+  }
+}
+
+.ds-btn-outline-secondary {
+  color: var(--ds-color-secondary-500);
+  background-color: transparent;
+  border-color: var(--ds-color-secondary-500);
+  
+  &:hover, &:active {
+    color: var(--ds-color-white);
+    background-color: var(--ds-color-secondary-500);
+    border-color: var(--ds-color-secondary-500);
+  }
+}
+
+.ds-btn-link {
+  color: var(--ds-color-primary-500);
+  background-color: transparent;
+  border-color: transparent;
+  text-decoration: underline;
+  
+  &:hover, &:active {
+    color: var(--ds-color-primary-700);
+    text-decoration: underline;
+  }
+} 

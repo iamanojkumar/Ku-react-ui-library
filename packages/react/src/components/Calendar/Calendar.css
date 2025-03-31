@@ -1,0 +1,161 @@
+.ku-calendar {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background-color: var(--ku-color-background-default);
+  color: var(--ku-color-text-primary);
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.ku-calendar.single {
+  flex-direction: row;
+}
+
+.ku-calendar.double {
+  flex-direction: row;
+}
+
+.ku-calendar.vertical {
+  flex-direction: column;
+}
+
+.ku-calendar-month {
+  min-width: 280px;
+  border: 1px solid var(--ku-color-border-default);
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.ku-calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem;
+  background-color: var(--ku-color-background-surface-1);
+  border-bottom: 1px solid var(--ku-color-border-default);
+}
+
+.ku-calendar-header h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.ku-calendar-navigation {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.ku-calendar-navigation button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: 1px solid var(--ku-color-border-default);
+  border-radius: 0.25rem;
+  background-color: var(--ku-color-background-default);
+  color: var(--ku-color-text-primary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.ku-calendar-navigation button:hover:not(:disabled) {
+  background-color: var(--ku-color-background-surface-2);
+  border-color: var(--ku-color-border-hover);
+}
+
+.ku-calendar-navigation button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.ku-calendar-navigation button:focus {
+  outline: none;
+  border-color: var(--ku-color-interactive-focus);
+  box-shadow: var(--ku-focus-ring);
+}
+
+.ku-calendar-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  padding: 0.5rem 0;
+  background-color: var(--ku-color-background-surface-1);
+  border-bottom: 1px solid var(--ku-color-border-default);
+}
+
+.ku-calendar-weekday {
+  text-align: center;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--ku-color-text-secondary);
+}
+
+.ku-calendar-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.25rem;
+  padding: 0.5rem;
+}
+
+.ku-calendar-day {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  background-color: transparent;
+  color: var(--ku-color-text-primary);
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.ku-calendar-day:hover:not(:disabled) {
+  background-color: var(--ku-color-background-surface-2);
+}
+
+.ku-calendar-day.selected {
+  background-color: var(--ku-color-brand-primary);
+  color: white;
+}
+
+.ku-calendar-day.other-month {
+  color: var(--ku-color-text-disabled);
+}
+
+.ku-calendar-day.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.ku-calendar-day:focus {
+  outline: none;
+  border-color: var(--ku-color-interactive-focus);
+  box-shadow: var(--ku-focus-ring);
+}
+
+/* Dark theme specific styles */
+.ku-calendar.dark .ku-calendar-day.selected {
+  background-color: var(--ku-color-brand-primary);
+  color: white;
+}
+
+.ku-calendar.dark .ku-calendar-day:hover:not(:disabled) {
+  background-color: var(--ku-color-background-surface-2);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .ku-calendar.double,
+  .ku-calendar.vertical {
+    flex-direction: column;
+  }
+  
+  .ku-calendar-month {
+    min-width: 100%;
+  }
+} 

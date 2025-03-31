@@ -1,0 +1,163 @@
+.ku-accordion {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--ku-spacing-2);
+  color: var(--ku-color-text-primary);
+  font-family: var(--ku-font-family-base);
+}
+
+/* Base styles for all variants */
+.ku-accordion-item {
+  border-radius: var(--ku-border-radius-base);
+  background-color: transparent;
+  transition: var(--ku-transition-all);
+}
+
+/* Contained variant */
+.ku-accordion--contained .ku-accordion-item {
+  background-color: var(--ku-color-background-surface-1);
+  border: var(--ku-border-width-thin) solid var(--ku-color-border-default);
+}
+
+.ku-accordion--contained .ku-accordion-trigger:hover {
+  background-color: var(--ku-color-background-surface-2);
+}
+
+.ku-accordion--contained .ku-accordion-content--expanded {
+  border-top: var(--ku-border-width-thin) solid var(--ku-color-border-default);
+}
+
+/* Outlined variant */
+.ku-accordion--outlined .ku-accordion-item {
+  border: var(--ku-border-width-thin) solid var(--ku-color-border-default);
+}
+
+.ku-accordion--outlined .ku-accordion-trigger:hover {
+  background-color: var(--ku-color-background-surface-1);
+}
+
+.ku-accordion--outlined .ku-accordion-content--expanded {
+  border-top: var(--ku-border-width-thin) solid var(--ku-color-border-default);
+}
+
+/* Ghost variant */
+.ku-accordion--ghost .ku-accordion-item {
+  border: none;
+}
+
+.ku-accordion--ghost .ku-accordion-trigger {
+  border-radius: var(--ku-radius-md);
+}
+
+.ku-accordion--ghost .ku-accordion-trigger:hover {
+  background-color: var(--ku-color-background-surface-1);
+}
+
+.ku-accordion-header {
+  margin: 0;
+}
+
+.ku-accordion-trigger {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--ku-spacing-2);
+  padding: var(--ku-spacing-3) var(--ku-spacing-4);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--ku-font-family-base);
+  font-size: var(--ku-font-size-base);
+  font-weight: var(--ku-font-weight-medium);
+  color: var(--ku-color-text-primary);
+  text-align: left;
+  transition: var(--ku-transition-all);
+}
+
+.ku-accordion-trigger:focus-visible {
+  outline: var(--ku-border-width-base) var(--ku-border-style-solid) var(--ku-color-interactive-focus);
+  outline-offset: calc(var(--ku-spacing-1) * -1);
+  border-radius: calc(var(--ku-border-radius-base) - 1px);
+}
+
+.ku-accordion-trigger:disabled {
+  cursor: not-allowed;
+  color: var(--ku-color-text-disabled);
+  background-color: var(--ku-color-background-disabled);
+}
+
+.ku-accordion-trigger-content {
+  display: flex;
+  align-items: center;
+  gap: var(--ku-spacing-2);
+  flex: 1;
+}
+
+.ku-accordion-trigger-icon {
+  color: var(--ku-color-text-secondary);
+  transition: var(--ku-transition-all);
+  flex-shrink: 0;
+}
+
+.ku-accordion-trigger--expanded .ku-accordion-trigger-icon {
+  transform: rotate(180deg);
+  color: var(--ku-color-text-primary);
+}
+
+.ku-accordion-trigger:disabled .ku-accordion-trigger-icon {
+  color: var(--ku-color-text-disabled);
+}
+
+.ku-accordion-content {
+  overflow: hidden;
+  height: 0;
+  opacity: 0;
+  transition: var(--ku-transition-all);
+}
+
+.ku-accordion-content--expanded {
+  height: auto;
+  opacity: 1;
+}
+
+.ku-accordion-content-inner {
+  padding: var(--ku-spacing-3) var(--ku-spacing-4);
+  color: var(--ku-color-text-secondary);
+  font-size: var(--ku-font-size-base);
+  line-height: var(--ku-line-height-normal);
+}
+
+/* Leading and trailing icons */
+.ku-accordion-icon--leading,
+.ku-accordion-icon--trailing {
+  display: flex;
+  align-items: center;
+  color: var(--ku-color-text-tertiary);
+}
+
+.ku-accordion-trigger:hover .ku-accordion-icon--leading,
+.ku-accordion-trigger:hover .ku-accordion-icon--trailing {
+  color: var(--ku-color-text-secondary);
+}
+
+.ku-accordion-trigger--expanded .ku-accordion-icon--leading,
+.ku-accordion-trigger--expanded .ku-accordion-icon--trailing {
+  color: var(--ku-color-text-primary);
+}
+
+.ku-accordion-trigger:disabled .ku-accordion-icon--leading,
+.ku-accordion-trigger:disabled .ku-accordion-icon--trailing {
+  color: var(--ku-color-text-disabled);
+}
+
+/* Reduce motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .ku-accordion-item,
+  .ku-accordion-trigger,
+  .ku-accordion-trigger-icon,
+  .ku-accordion-content {
+    transition: none;
+  }
+} 

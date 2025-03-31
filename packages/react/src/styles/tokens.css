@@ -1,0 +1,138 @@
+/* Import core styles */
+@import '@ku-design-system/core/src/styles/index.css';
+@import '@ku-design-system/core/src/styles/typography.css';
+
+/* Component-specific tokens */
+:root {
+  /* Spacing Scale */
+  --ku-spacing-1: 0.25rem;  /* 4px */
+  --ku-spacing-2: 0.5rem;   /* 8px */
+  --ku-spacing-3: 0.75rem;  /* 12px */
+  --ku-spacing-4: 1rem;     /* 16px */
+  --ku-spacing-5: 1.25rem;  /* 20px */
+  --ku-spacing-6: 1.5rem;   /* 24px */
+
+  /* Component Spacing */
+  --ku-spacing-component-2xs: var(--ku-spacing-1);
+  --ku-spacing-component-xs: var(--ku-spacing-2);
+  --ku-spacing-component-sm: var(--ku-spacing-3);
+  --ku-spacing-component-md: var(--ku-spacing-4);
+  --ku-spacing-component-lg: var(--ku-spacing-5);
+  --ku-spacing-component-xl: var(--ku-spacing-6);
+
+  /* Border Radius Scale */
+  --ku-border-radius-none: 0;
+  --ku-border-radius-small: 0.125rem;    /* 2px */
+  --ku-border-radius-base: 0.25rem;      /* 4px */
+  --ku-border-radius-medium: 0.375rem;    /* 6px */
+  --ku-border-radius-large: 0.5rem;      /* 8px */
+  --ku-border-radius-xlarge: 0.75rem;    /* 12px */
+
+  /* Component Border Radius */
+  --ku-radius-component-none: var(--ku-border-radius-none);
+  --ku-radius-component-sm: var(--ku-border-radius-small);
+  --ku-radius-component-md: var(--ku-border-radius-base);
+  --ku-radius-component-lg: var(--ku-border-radius-large);
+  --ku-radius-component-xl: var(--ku-border-radius-xlarge);
+  --ku-radius-component-full: 9999px;
+
+  /* Component-specific tokens */
+  --ku-badge-gap: var(--ku-spacing-1);
+  --ku-badge-radius: var(--ku-radius-component-full);
+  --ku-badge-border-width: 1px;
+  --ku-badge-dismiss-size: 16px;
+  --ku-badge-dismiss-margin: var(--ku-spacing-1);
+  --ku-badge-dot-size: 8px;
+
+  /* Badge Heights */
+  --ku-badge-height-xs: 16px;
+  --ku-badge-height-sm: 20px;
+  --ku-badge-height-md: 24px;
+  --ku-badge-height-lg: 28px;
+
+  /* Badge Min Widths */
+  --ku-badge-min-width-xs: 16px;
+  --ku-badge-min-width-sm: 20px;
+  --ku-badge-min-width-md: 24px;
+  --ku-badge-min-width-lg: 28px;
+
+  /* Badge Padding */
+  --ku-badge-padding-x-xs: var(--ku-spacing-1);
+  --ku-badge-padding-x-sm: var(--ku-spacing-2);
+  --ku-badge-padding-x-md: var(--ku-spacing-2);
+  --ku-badge-padding-x-lg: var(--ku-spacing-3);
+
+  /* Badge Font Sizes */
+  --ku-badge-font-size-xs: var(--ku-font-size-2xs);
+  --ku-badge-font-size-sm: var(--ku-font-size-xs);
+  --ku-badge-font-size-md: var(--ku-font-size-sm);
+  --ku-badge-font-size-lg: var(--ku-font-size-base);
+
+  /* Avatar Sizes */
+  --ku-avatar-size-xs: 24px;
+  --ku-avatar-size-sm: 32px;
+  --ku-avatar-size-md: 40px;
+  --ku-avatar-size-lg: 48px;
+  --ku-avatar-size-xl: 56px;
+
+  /* Avatar Font Sizes */
+  --ku-avatar-font-size-xs: var(--ku-font-size-xs);
+  --ku-avatar-font-size-sm: var(--ku-font-size-sm);
+  --ku-avatar-font-size-md: var(--ku-font-size-base);
+  --ku-avatar-font-size-lg: var(--ku-font-size-lg);
+  --ku-avatar-font-size-xl: var(--ku-font-size-xl);
+
+  /* Button Base */
+  --ku-button-min-width: 64px;
+  --ku-button-radius: var(--ku-radius-component-md);
+  --ku-button-gap: var(--ku-spacing-component-xs);
+  --ku-button-border-width: var(--ku-border-width-thin);
+
+  /* Button Heights */
+  --ku-button-height-sm: 32px;
+  --ku-button-height-md: 40px;
+  --ku-button-height-lg: 48px;
+  
+  /* Button Padding */
+  --ku-button-padding-x-sm: var(--ku-spacing-component-sm);
+  --ku-button-padding-y-sm: var(--ku-spacing-component-2xs);
+  --ku-button-padding-x-md: var(--ku-spacing-component-md);
+  --ku-button-padding-y-md: var(--ku-spacing-component-xs);
+  --ku-button-padding-x-lg: var(--ku-spacing-component-lg);
+  --ku-button-padding-y-lg: var(--ku-spacing-component-sm);
+
+  /* Button Icon */
+  --ku-button-icon-spacing: var(--ku-spacing-component-2xs);
+
+  /* Breadcrumb Base */
+  --ku-breadcrumb-gap: var(--ku-spacing-component-2xs);
+  --ku-breadcrumb-item-gap: var(--ku-spacing-component-2xs);
+  --ku-breadcrumb-item-padding: var(--ku-spacing-component-2xs) var(--ku-spacing-component-xs);
+  --ku-breadcrumb-item-radius: var(--ku-radius-component-sm);
+  --ku-breadcrumb-icon-size: 16px;
+  --ku-breadcrumb-separator-size: 16px;
+
+  /* Accordion */
+  --ku-accordion-padding-x: var(--ku-spacing-4);
+  --ku-accordion-padding-y: var(--ku-spacing-3);
+  --ku-accordion-gap: var(--ku-spacing-2);
+  --ku-accordion-radius: var(--ku-border-radius-base);
+  --ku-accordion-border-width: var(--ku-border-width-thin);
+
+  /* Alert */
+  --ku-alert-padding-x: var(--ku-spacing-4);
+  --ku-alert-padding-y: var(--ku-spacing-3);
+  --ku-alert-radius: var(--ku-border-radius-base);
+  --ku-alert-border-width: var(--ku-border-width-thin);
+  --ku-alert-min-width: 320px;
+  --ku-alert-max-width: 800px;
+}
+
+/* Apply typography tokens to components */
+.ku-button {
+  font-size: var(--ku-text-button-size);
+  font-weight: var(--ku-text-button-weight);
+  line-height: var(--ku-text-button-line-height);
+  letter-spacing: var(--ku-text-button-spacing);
+  text-transform: var(--ku-text-button-transform);
+} 

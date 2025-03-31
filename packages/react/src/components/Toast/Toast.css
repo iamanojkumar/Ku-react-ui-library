@@ -1,0 +1,221 @@
+.ku-toast {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: var(--ku-spacing-4);
+  border-radius: var(--ku-radius-lg);
+  background-color: var(--ku-color-background);
+  box-shadow: var(--ku-shadow-lg);
+  max-width: 400px;
+  min-width: 300px;
+  margin: var(--ku-spacing-2);
+  font-family: var(--ku-font-family);
+  font-size: var(--ku-font-size-sm);
+  line-height: var(--ku-line-height-normal);
+  color: var(--ku-color-text-primary);
+  border: 1px solid var(--ku-color-border);
+  transition: transform var(--ku-transition-normal), opacity var(--ku-transition-normal);
+  z-index: var(--ku-z-index-toast);
+}
+
+.ku-toast--stacked {
+  margin-top: var(--ku-spacing-2);
+}
+
+.ku-toast-content {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--ku-spacing-3);
+  flex: 1;
+}
+
+.ku-toast-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: var(--ku-size-5);
+  height: var(--ku-size-5);
+  color: var(--ku-color-text-primary);
+}
+
+.ku-toast-message {
+  flex: 1;
+}
+
+.ku-toast-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--ku-spacing-2);
+  margin-left: var(--ku-spacing-4);
+}
+
+.ku-toast-action {
+  padding: var(--ku-spacing-2) var(--ku-spacing-3);
+  border: none;
+  background: none;
+  color: var(--ku-color-primary-500);
+  font-family: var(--ku-font-family);
+  font-size: var(--ku-font-size-sm);
+  font-weight: var(--ku-font-weight-medium);
+  cursor: pointer;
+  border-radius: var(--ku-radius-md);
+  transition: background-color var(--ku-transition-normal);
+}
+
+.ku-toast-action:hover {
+  background-color: var(--ku-color-primary-50);
+}
+
+.ku-toast-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--ku-size-5);
+  height: var(--ku-size-5);
+  padding: 0;
+  border: none;
+  background: none;
+  color: var(--ku-color-text-muted);
+  cursor: pointer;
+  border-radius: var(--ku-radius-md);
+  transition: background-color var(--ku-transition-normal), color var(--ku-transition-normal);
+}
+
+.ku-toast-close:hover {
+  background-color: var(--ku-color-gray-100);
+  color: var(--ku-color-text-primary);
+}
+
+/* Variants */
+.ku-toast--success {
+  border-left: 4px solid var(--ku-color-success-500);
+}
+
+.ku-toast--success .ku-toast-icon {
+  color: var(--ku-color-success-500);
+}
+
+.ku-toast--error {
+  border-left: 4px solid var(--ku-color-error-500);
+}
+
+.ku-toast--error .ku-toast-icon {
+  color: var(--ku-color-error-500);
+}
+
+.ku-toast--warning {
+  border-left: 4px solid var(--ku-color-warning-500);
+}
+
+.ku-toast--warning .ku-toast-icon {
+  color: var(--ku-color-warning-500);
+}
+
+.ku-toast--info {
+  border-left: 4px solid var(--ku-color-info-500);
+}
+
+.ku-toast--info .ku-toast-icon {
+  color: var(--ku-color-info-500);
+}
+
+/* Dark theme */
+[data-theme="dark"] .ku-toast {
+  background-color: var(--ku-color-background-dark);
+  border-color: var(--ku-color-border-dark);
+  color: var(--ku-color-text-primary-dark);
+}
+
+[data-theme="dark"] .ku-toast-action {
+  color: var(--ku-color-primary-400);
+}
+
+[data-theme="dark"] .ku-toast-action:hover {
+  background-color: var(--ku-color-primary-900);
+}
+
+[data-theme="dark"] .ku-toast-close {
+  color: var(--ku-color-text-muted-dark);
+}
+
+[data-theme="dark"] .ku-toast-close:hover {
+  background-color: var(--ku-color-gray-800);
+  color: var(--ku-color-text-primary-dark);
+}
+
+/* High contrast mode */
+@media (forced-colors: active) {
+  .ku-toast {
+    border: 1px solid ButtonText;
+  }
+
+  .ku-toast-action {
+    color: Highlight;
+  }
+
+  .ku-toast-action:hover {
+    background-color: Highlight;
+    color: HighlightText;
+  }
+
+  .ku-toast-close {
+    color: ButtonText;
+  }
+
+  .ku-toast-close:hover {
+    background-color: ButtonText;
+    color: ButtonFace;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .ku-toast {
+    transition: none;
+  }
+
+  .ku-toast-action,
+  .ku-toast-close {
+    transition: none;
+  }
+}
+
+/* Focus styles */
+.ku-toast:focus-visible,
+.ku-toast-action:focus-visible,
+.ku-toast-close:focus-visible {
+  outline: 2px solid var(--ku-color-primary-500);
+  outline-offset: 2px;
+}
+
+/* Stacking animation */
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+.ku-toast {
+  animation: slideIn var(--ku-transition-normal) ease-out;
+}
+
+.ku-toast[data-exiting="true"] {
+  animation: slideOut var(--ku-transition-normal) ease-in forwards;
+} 

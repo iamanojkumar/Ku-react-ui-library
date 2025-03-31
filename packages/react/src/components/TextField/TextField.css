@@ -1,0 +1,372 @@
+.ku-textfield-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ku-spacing-2);
+  width: 100%;
+  font-family: var(--ku-font-family-base);
+}
+
+/* Label styles */
+.ku-textfield-label {
+  display: flex;
+  align-items: center;
+  gap: var(--ku-spacing-2);
+  color: var(--ku-color-text-primary);
+  font-size: var(--ku-font-size-sm);
+  font-weight: var(--ku-font-weight-medium);
+  cursor: pointer;
+}
+
+.ku-textfield-label--disabled {
+  color: var(--ku-color-text-disabled);
+  cursor: not-allowed;
+}
+
+.ku-textfield-label-icon {
+  display: flex;
+  align-items: center;
+  color: var(--ku-color-text-muted);
+}
+
+/* Field container */
+.ku-textfield-field {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+/* Base input styles */
+.ku-textfield {
+  width: 100%;
+  font-family: var(--ku-font-family-base);
+  font-size: var(--ku-font-size-sm);
+  line-height: var(--ku-line-height-normal);
+  color: var(--ku-color-text-primary);
+  background-color: var(--ku-color-background-default);
+  border: 1px solid var(--ku-color-border-default);
+  border-radius: var(--ku-border-radius-md);
+  transition: all var(--ku-transition-normal);
+}
+
+/* Placeholder styles */
+.ku-textfield::placeholder {
+  font-family: var(--ku-font-family-base);
+  color: var(--ku-color-text-subtle);
+  opacity: 1;
+  transition: color var(--ku-transition-normal);
+}
+
+/* Variants */
+/* Outlined variant */
+.ku-textfield--outlined {
+  padding: var(--ku-spacing-2-5);
+  background-color: var(--ku-color-background-default);
+  border: 1px solid var(--ku-color-border-default);
+}
+
+.ku-textfield--outlined:hover:not(:disabled) {
+  border-color: var(--ku-color-border-hovered);
+}
+
+.ku-textfield--outlined:focus {
+  outline: none;
+  border-color: var(--ku-color-primary-500);
+  box-shadow: 0 0 0 2px var(--ku-color-primary-100);
+}
+
+/* Filled variant */
+.ku-textfield--filled {
+  padding: var(--ku-spacing-2-5);
+  background-color: var(--ku-color-gray-100);
+  border: 1px solid transparent;
+}
+
+.ku-textfield--filled:hover:not(:disabled) {
+  background-color: var(--ku-color-gray-200);
+}
+
+.ku-textfield--filled:focus {
+  outline: none;
+  background-color: var(--ku-color-background-default);
+  border-color: var(--ku-color-primary-500);
+  box-shadow: 0 0 0 2px var(--ku-color-primary-100);
+}
+
+/* Subtle variant */
+.ku-textfield--subtle {
+  padding: var(--ku-spacing-2-5);
+  background-color: transparent;
+  border: 1px solid transparent;
+}
+
+.ku-textfield--subtle:hover:not(:disabled) {
+  background-color: var(--ku-color-gray-100);
+}
+
+.ku-textfield--subtle:focus {
+  outline: none;
+  background-color: var(--ku-color-background-default);
+  border-color: var(--ku-color-primary-500);
+  box-shadow: 0 0 0 2px var(--ku-color-primary-100);
+}
+
+/* Sizes */
+.ku-textfield--sm {
+  height: var(--ku-size-8);
+  padding: var(--ku-spacing-2);
+  font-size: var(--ku-font-size-sm);
+}
+
+.ku-textfield--md {
+  height: var(--ku-size-10);
+  padding: var(--ku-spacing-2-5);
+  font-size: var(--ku-font-size-sm);
+}
+
+.ku-textfield--lg {
+  height: var(--ku-size-12);
+  padding: var(--ku-spacing-3);
+  font-size: var(--ku-font-size-md);
+}
+
+/* States */
+.ku-textfield--error {
+  border-color: var(--ku-color-danger-500) !important;
+}
+
+.ku-textfield--error:focus {
+  border-color: var(--ku-color-danger-500) !important;
+  box-shadow: 0 0 0 2px var(--ku-color-danger-100) !important;
+}
+
+.ku-textfield--disabled {
+  opacity: var(--ku-opacity-disabled);
+  cursor: not-allowed;
+  background-color: var(--ku-color-gray-50);
+}
+
+/* Icons and Affixes */
+.ku-textfield-icon {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--ku-size-5);
+  height: var(--ku-size-5);
+  color: var(--ku-color-text-muted);
+  pointer-events: none;
+}
+
+.ku-textfield-icon--start {
+  left: var(--ku-spacing-3);
+}
+
+.ku-textfield-icon--end {
+  right: var(--ku-spacing-3);
+}
+
+.ku-textfield--has-start-icon {
+  padding-left: var(--ku-spacing-10);
+}
+
+.ku-textfield--has-end-icon {
+  padding-right: var(--ku-spacing-10);
+}
+
+/* Action button */
+.ku-textfield-action {
+  position: absolute;
+  right: var(--ku-spacing-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ku-textfield--has-action {
+  padding-right: var(--ku-spacing-12);
+}
+
+/* Affixes */
+.ku-textfield-affix {
+  display: flex;
+  align-items: center;
+  color: var(--ku-color-text-muted);
+  font-family: var(--ku-font-family-base);
+  font-size: var(--ku-font-size-sm);
+  background-color: var(--ku-color-gray-50);
+  padding: var(--ku-spacing-2) var(--ku-spacing-3);
+  border: 1px solid var(--ku-color-border-default);
+}
+
+.ku-textfield-affix--prefix {
+  border-right: none;
+  border-top-left-radius: var(--ku-border-radius-md);
+  border-bottom-left-radius: var(--ku-border-radius-md);
+}
+
+.ku-textfield-affix--suffix {
+  border-left: none;
+  border-top-right-radius: var(--ku-border-radius-md);
+  border-bottom-right-radius: var(--ku-border-radius-md);
+}
+
+.ku-textfield--has-prefix {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.ku-textfield--has-suffix {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+/* Helper text and error message */
+.ku-textfield-support {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ku-spacing-1);
+}
+
+.ku-textfield-helper {
+  color: var(--ku-color-text-muted);
+  font-family: var(--ku-font-family-base);
+  font-size: var(--ku-font-size-sm);
+}
+
+.ku-textfield-error {
+  color: var(--ku-color-danger-500);
+  font-family: var(--ku-font-family-base);
+  font-size: var(--ku-font-size-sm);
+}
+
+/* Dark theme */
+[data-theme="dark"] .ku-textfield-label {
+  color: var(--ku-color-text-primary-dark);
+}
+
+[data-theme="dark"] .ku-textfield-label--disabled {
+  color: var(--ku-color-text-disabled-dark);
+}
+
+[data-theme="dark"] .ku-textfield {
+  background-color: var(--ku-color-gray-900);
+  border-color: var(--ku-color-border-default-dark);
+  color: var(--ku-color-text-primary-dark);
+}
+
+[data-theme="dark"] .ku-textfield:hover:not(:disabled) {
+  border-color: var(--ku-color-border-hovered-dark);
+}
+
+[data-theme="dark"] .ku-textfield--filled {
+  background-color: var(--ku-color-gray-800);
+}
+
+[data-theme="dark"] .ku-textfield--filled:hover:not(:disabled) {
+  background-color: var(--ku-color-gray-700);
+}
+
+[data-theme="dark"] .ku-textfield--filled:focus {
+  background-color: var(--ku-color-gray-900);
+}
+
+[data-theme="dark"] .ku-textfield--subtle:hover:not(:disabled) {
+  background-color: var(--ku-color-gray-800);
+}
+
+[data-theme="dark"] .ku-textfield:focus {
+  border-color: var(--ku-color-primary-400);
+  box-shadow: 0 0 0 2px var(--ku-color-primary-900);
+}
+
+[data-theme="dark"] .ku-textfield-affix {
+  background-color: var(--ku-color-gray-800);
+  border-color: var(--ku-color-border-default-dark);
+  color: var(--ku-color-text-muted-dark);
+}
+
+/* High contrast mode */
+@media (forced-colors: active) {
+  .ku-textfield {
+    border: 1px solid ButtonBorder;
+  }
+  
+  .ku-textfield:focus {
+    outline: 2px solid ButtonText;
+    outline-offset: 2px;
+  }
+  
+  .ku-textfield--error {
+    border: 2px solid Mark;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .ku-textfield,
+  .ku-textfield::placeholder {
+    transition: none;
+  }
+}
+
+/* Password toggle button */
+.ku-textfield-password-toggle {
+  position: absolute;
+  right: var(--ku-spacing-3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--ku-size-5);
+  height: var(--ku-size-5);
+  padding: 0;
+  border: none;
+  background: none;
+  color: var(--ku-color-text-muted);
+  cursor: pointer;
+  transition: color var(--ku-transition-normal);
+}
+
+.ku-textfield-password-toggle:hover:not(:disabled) {
+  color: var(--ku-color-text-primary);
+}
+
+.ku-textfield-password-toggle:disabled {
+  opacity: var(--ku-opacity-disabled);
+  cursor: not-allowed;
+}
+
+.ku-textfield--has-password-toggle {
+  padding-right: var(--ku-spacing-12);
+}
+
+/* Dark theme */
+[data-theme="dark"] .ku-textfield-password-toggle {
+  color: var(--ku-color-text-muted-dark);
+}
+
+[data-theme="dark"] .ku-textfield-password-toggle:hover:not(:disabled) {
+  color: var(--ku-color-text-primary-dark);
+}
+
+/* High contrast mode */
+@media (forced-colors: active) {
+  .ku-textfield-password-toggle {
+    color: ButtonText;
+  }
+  
+  .ku-textfield-password-toggle:hover:not(:disabled) {
+    color: Highlight;
+  }
+  
+  .ku-textfield-password-toggle:disabled {
+    color: GrayText;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .ku-textfield-password-toggle {
+    transition: none;
+  }
+} 

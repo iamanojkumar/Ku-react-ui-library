@@ -1,0 +1,152 @@
+/* Base styles */
+.ku-loading {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  color: var(--ku-color-primary);
+}
+
+/* Visually hide label but keep it for screen readers */
+.ku-loading__label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Size variants */
+.ku-loading--small {
+  --ku-loading-size: var(--ku-spacing-4);
+}
+
+.ku-loading--medium {
+  --ku-loading-size: var(--ku-spacing-6);
+}
+
+.ku-loading--large {
+  --ku-loading-size: var(--ku-spacing-8);
+}
+
+/* Spinner variant */
+.ku-loading__spinner {
+  width: var(--ku-loading-size);
+  height: var(--ku-loading-size);
+  border: calc(var(--ku-loading-size) * 0.1) solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: ku-loading-spin var(--ku-loading-animation-duration) linear infinite;
+}
+
+@keyframes ku-loading-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Dots variant */
+.ku-loading__dots {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--ku-loading-size) * 0.25);
+}
+
+.ku-loading__dot {
+  width: calc(var(--ku-loading-size) * 0.25);
+  height: calc(var(--ku-loading-size) * 0.25);
+  background-color: currentColor;
+  border-radius: 50%;
+  animation: ku-loading-pulse var(--ku-loading-animation-duration) ease-in-out infinite;
+}
+
+@keyframes ku-loading-pulse {
+  0%, 100% {
+    transform: scale(0.5);
+    opacity: 0.3;
+  }
+  50% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Pulse variant */
+.ku-loading__pulse {
+  position: relative;
+  width: var(--ku-loading-size);
+  height: var(--ku-loading-size);
+}
+
+.ku-loading__pulse-ring {
+  position: absolute;
+  inset: 0;
+  border: calc(var(--ku-loading-size) * 0.1) solid currentColor;
+  border-radius: 50%;
+  opacity: 0;
+  animation: ku-loading-ripple var(--ku-loading-animation-duration) cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes ku-loading-ripple {
+  0% {
+    transform: scale(0.8);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+/* Progress bar */
+.ku-loading__progress {
+  position: absolute;
+  bottom: calc(var(--ku-loading-size) * -0.5);
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--ku-color-border);
+  overflow: hidden;
+}
+
+.ku-loading__progress::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: currentColor;
+  animation: ku-loading-progress linear forwards;
+}
+
+@keyframes ku-loading-progress {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* Dark theme adjustments */
+[data-theme="dark"] .ku-loading {
+  color: var(--ku-color-primary-dark);
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .ku-loading__spinner,
+  .ku-loading__dot,
+  .ku-loading__pulse-ring,
+  .ku-loading__progress::after {
+    animation-duration: calc(var(--ku-loading-animation-duration) * 2);
+  }
+} 

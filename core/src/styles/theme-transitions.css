@@ -1,0 +1,24 @@
+/* Theme transition styles */
+:root {
+  /* Add transitions for all CSS custom properties */
+  --ku-transition-duration: 200ms;
+  --ku-transition-timing: ease-out;
+}
+
+/* Apply transitions to color-related properties */
+* {
+  transition: 
+    background-color var(--ku-transition-duration) var(--ku-transition-timing),
+    border-color var(--ku-transition-duration) var(--ku-transition-timing),
+    color var(--ku-transition-duration) var(--ku-transition-timing),
+    box-shadow var(--ku-transition-duration) var(--ku-transition-timing),
+    fill var(--ku-transition-duration) var(--ku-transition-timing),
+    stroke var(--ku-transition-duration) var(--ku-transition-timing);
+}
+
+/* Disable transitions when user prefers reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+} 

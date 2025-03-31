@@ -1,0 +1,77 @@
+.ku-divider {
+  --divider-thickness: 1px;
+  --divider-color: var(--ku-color-border-2);
+  --divider-spacing: var(--ku-spacing-component-md);
+  --divider-label-gap: var(--ku-spacing-component-md);
+
+  border: none;
+  margin: 0;
+  padding: 0;
+  background: none;
+}
+
+/* Horizontal divider */
+.ku-divider--horizontal {
+  width: 100%;
+  height: var(--divider-thickness);
+  margin: var(--divider-spacing) 0;
+  background-color: var(--divider-color);
+}
+
+/* Vertical divider */
+.ku-divider--vertical {
+  height: 100%;
+  min-height: var(--ku-spacing-component-xl);
+  width: var(--divider-thickness);
+  margin: 0 var(--divider-spacing);
+  background-color: var(--divider-color);
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Divider with label */
+.ku-divider--with-label {
+  display: flex;
+  align-items: center;
+  gap: var(--divider-label-gap);
+  margin: var(--divider-spacing) 0;
+  height: auto;
+  width: 100%;
+  background: none;
+}
+
+.ku-divider--with-label::before,
+.ku-divider--with-label::after {
+  content: '';
+  flex: 1;
+  height: var(--divider-thickness);
+  background-color: var(--divider-color);
+}
+
+.ku-divider__label-container {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  color: var(--ku-color-text-secondary);
+  font-size: var(--ku-font-size-sm);
+  line-height: var(--ku-line-height-normal);
+  white-space: nowrap;
+}
+
+.ku-divider__label {
+  padding: 0 var(--ku-spacing-component-xs);
+}
+
+/* Dark theme */
+@media (prefers-color-scheme: dark) {
+  .ku-divider {
+    --divider-color: var(--ku-color-gray-1100, rgba(255, 255, 255, 0.2));
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .ku-divider {
+    transition: none;
+  }
+} 

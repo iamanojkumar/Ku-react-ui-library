@@ -1,0 +1,97 @@
+.ku-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ku-spacing-2);
+  text-decoration: none;
+  font: inherit;
+  cursor: pointer;
+  transition: color var(--ku-transition-duration-normal) var(--ku-transition-timing-normal);
+}
+
+/* Color variants */
+.ku-link--default {
+  color: var(--ku-color-text-link);
+}
+
+.ku-link--primary {
+  color: var(--ku-color-text-primary);
+}
+
+.ku-link--secondary {
+  color: var(--ku-color-text-secondary);
+}
+
+.ku-link--inherit {
+  color: inherit;
+}
+
+/* Hover states */
+.ku-link:hover:not(.ku-link--disabled) {
+  text-decoration: underline;
+}
+
+.ku-link--default:hover:not(.ku-link--disabled) {
+  color: var(--ku-color-text-link-hover);
+}
+
+.ku-link--primary:hover:not(.ku-link--disabled) {
+  color: var(--ku-color-text-primary-hover);
+}
+
+.ku-link--secondary:hover:not(.ku-link--disabled) {
+  color: var(--ku-color-text-secondary-hover);
+}
+
+/* Focus styles */
+.ku-link:focus-visible {
+  outline: 2px solid var(--ku-color-border-focus);
+  outline-offset: 2px;
+  border-radius: var(--ku-border-radius-sm);
+}
+
+/* Disabled state */
+.ku-link--disabled {
+  color: var(--ku-color-text-disabled);
+  cursor: not-allowed;
+  pointer-events: none;
+  opacity: var(--ku-opacity-disabled);
+}
+
+/* Icon styles */
+.ku-link__icon {
+  display: inline-flex;
+  align-items: center;
+  color: currentColor;
+  flex-shrink: 0;
+}
+
+/* Text styles */
+.ku-link__text {
+  display: inline;
+  /* Enable proper line breaks in text flow */
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
+/* Dark theme adjustments */
+[data-theme="dark"] .ku-link--default {
+  color: var(--ku-color-text-link-dark);
+}
+
+[data-theme="dark"] .ku-link--default:hover:not(.ku-link--disabled) {
+  color: var(--ku-color-text-link-hover-dark);
+}
+
+/* High contrast theme adjustments */
+[data-high-contrast="true"] .ku-link:not(.ku-link--inherit) {
+  text-decoration: underline;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .ku-link {
+    transition: none;
+  }
+} 

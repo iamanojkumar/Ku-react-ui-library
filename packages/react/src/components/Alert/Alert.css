@@ -1,0 +1,142 @@
+.ku-alert {
+  position: relative;
+  display: flex;
+  width: fit-content;
+  min-width: 320px;
+  max-width: 800px;
+  padding: var(--ku-spacing-3) var(--ku-spacing-4);
+  border-radius: var(--ku-border-radius-base);
+  transition: var(--ku-transition-all);
+  font-family: var(--ku-font-family-base);
+}
+
+/* Variants */
+.ku-alert--info {
+  background-color: var(--ku-color-info-1);
+  border: var(--ku-border-width-thin) solid var(--ku-color-info-2);
+  color: var(--ku-color-text-primary);
+}
+
+.ku-alert--success {
+  background-color: var(--ku-color-success-1);
+  border: var(--ku-border-width-thin) solid var(--ku-color-success-2);
+  color: var(--ku-color-text-primary);
+}
+
+.ku-alert--warning {
+  background-color: var(--ku-color-warning-1);
+  border: var(--ku-border-width-thin) solid var(--ku-color-warning-2);
+  color: var(--ku-color-text-primary);
+}
+
+.ku-alert--error {
+  background-color: var(--ku-color-alert-1);
+  border: var(--ku-border-width-thin) solid var(--ku-color-alert-2);
+  color: var(--ku-color-text-primary);
+}
+
+/* Content Layout */
+.ku-alert-content {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--ku-spacing-3);
+  width: 100%;
+}
+
+.ku-alert-icon {
+  flex-shrink: 0;
+  color: currentColor;
+  opacity: 0.7;
+}
+
+.ku-alert-message {
+  flex: 1;
+  min-width: 0;
+}
+
+.ku-alert-title {
+  font-family: var(--ku-font-family-base);
+  font-weight: var(--ku-font-weight-semibold);
+  font-size: var(--ku-font-size-lg);
+  line-height: var(--ku-line-height-snug);
+  margin-bottom: var(--ku-spacing-1);
+  color: var(--ku-color-text-primary);
+}
+
+.ku-alert-description {
+  font-family: var(--ku-font-family-base);
+  font-size: var(--ku-font-size-base);
+  line-height: var(--ku-line-height-normal);
+  color: var(--ku-color-text-secondary);
+}
+
+.ku-alert--with-title .ku-alert-description {
+  margin-top: var(--ku-spacing-1);
+}
+
+/* Actions */
+.ku-alert-actions {
+  display: flex;
+  gap: var(--ku-spacing-2);
+  margin-top: var(--ku-spacing-3);
+}
+
+/* Dismiss Button */
+.ku-alert-dismiss {
+  position: absolute;
+  top: var(--ku-spacing-2);
+  right: var(--ku-spacing-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--ku-spacing-1);
+  color: currentColor;
+  opacity: 0.5;
+  border: none;
+  background: transparent;
+  border-radius: var(--ku-radius-base);
+  cursor: pointer;
+  transition: var(--ku-transition-all);
+}
+
+.ku-alert-dismiss:hover {
+  opacity: 0.7;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.ku-alert-dismiss:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--ku-color-primary-focus-ring);
+}
+
+/* Responsive Behavior */
+@media (max-width: 768px) {
+  .ku-alert {
+    min-width: unset;
+  }
+
+  .ku-alert--full-width-mobile {
+    width: 100%;
+    border-radius: 0;
+  }
+}
+
+/* High Contrast Mode */
+@media (forced-colors: active) {
+  .ku-alert {
+    border: 2px solid currentColor;
+  }
+
+  .ku-alert-icon,
+  .ku-alert-dismiss {
+    forced-color-adjust: none;
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .ku-alert,
+  .ku-alert-dismiss {
+    transition: none;
+  }
+} 

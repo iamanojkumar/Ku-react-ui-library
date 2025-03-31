@@ -1,0 +1,129 @@
+.ku-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ku-spacing-2);
+  position: relative;
+  cursor: pointer;
+}
+
+.ku-switch--disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.ku-switch__input-wrapper {
+  position: relative;
+  width: 44px;
+  height: 24px;
+}
+
+.ku-switch__input {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 1;
+  margin: 0;
+  padding: 0;
+}
+
+.ku-switch__input:disabled {
+  cursor: not-allowed;
+}
+
+.ku-switch__track {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #E4E4E7;  /* Light gray for unchecked state */
+  border-radius: 12px;
+  transition: background-color 200ms ease;
+}
+
+.ku-switch__input:checked + .ku-switch__track {
+  background-color: #2563EB;  /* Blue for checked state */
+}
+
+.ku-switch__input:focus-visible + .ku-switch__track {
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);  /* Light blue focus ring */
+}
+
+.ku-switch__thumb {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #FFFFFF;  /* White thumb */
+  border-radius: 10px;
+  top: 2px;
+  left: 2px;
+  transition: transform 200ms ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.ku-switch__input:checked ~ .ku-switch__thumb {
+  transform: translateX(20px);
+}
+
+.ku-switch__label {
+  color: #18181B;  /* Dark text for label */
+  font-size: var(--ku-font-size-sm);
+  line-height: var(--ku-line-height-sm);
+  user-select: none;
+}
+
+.ku-switch__label--hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Dark theme adjustments */
+[data-theme="dark"] .ku-switch__track {
+  background-color: #3F3F46;  /* Darker gray for dark theme unchecked */
+}
+
+[data-theme="dark"] .ku-switch__input:checked + .ku-switch__track {
+  background-color: #3B82F6;  /* Slightly lighter blue for dark theme */
+}
+
+[data-theme="dark"] .ku-switch__thumb {
+  background-color: #FFFFFF;
+}
+
+[data-theme="dark"] .ku-switch__label {
+  color: #FAFAFA;  /* Light text for dark theme */
+}
+
+/* High contrast mode */
+@media (forced-colors: active) {
+  .ku-switch__track {
+    border: 1px solid ButtonBorder;
+  }
+  
+  .ku-switch__thumb {
+    background-color: ButtonText;
+  }
+  
+  .ku-switch__input:checked + .ku-switch__track {
+    background-color: Highlight;
+  }
+  
+  .ku-switch__input:disabled + .ku-switch__track {
+    opacity: 0.5;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .ku-switch__thumb,
+  .ku-switch__track {
+    transition: none;
+  }
+} 

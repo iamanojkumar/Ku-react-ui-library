@@ -1,0 +1,126 @@
+/* Light theme (default) */
+:root {
+  /* Background colors */
+  --ku-color-background-default: #ffffff;
+  --ku-color-background-surface-1: #f8f9fa;
+  --ku-color-background-surface-2: #f1f3f5;
+  --ku-color-background-surface-3: #e9ecef;
+  --ku-color-background-surface-4: #dee2e6;
+  --ku-color-background-surface-5: #ced4da;
+
+  /* Text colors */
+  --ku-color-text-primary: #212529;
+  --ku-color-text-secondary: #495057;
+  --ku-color-text-disabled: #adb5bd;
+
+  /* Brand colors */
+  --ku-color-brand-primary: #228be6;
+  --ku-color-brand-hover: #1c7ed6;
+  --ku-color-brand-active: #1b6cc4;
+
+  /* State colors */
+  --ku-color-success-enabled: #40c057;
+  --ku-color-success-hover: #37b24d;
+  --ku-color-success-active: #2f9e44;
+  --ku-color-success-subtle-background: #ebfbee;
+  --ku-color-success-subtle-hover: #d3f9d8;
+
+  --ku-color-warning-enabled: #fab005;
+  --ku-color-warning-hover: #f59f00;
+  --ku-color-warning-active: #f08c00;
+  --ku-color-warning-subtle-background: #fff9db;
+  --ku-color-warning-subtle-hover: #fff3bf;
+
+  --ku-color-error-enabled: #fa5252;
+  --ku-color-error-hover: #e03131;
+  --ku-color-error-active: #c92a2a;
+  --ku-color-error-subtle-background: #fff5f5;
+  --ku-color-error-subtle-hover: #ffe3e3;
+
+  --ku-color-info-enabled: #339af0;
+  --ku-color-info-hover: #228be6;
+  --ku-color-info-active: #1c7ed6;
+  --ku-color-info-subtle-background: #e7f5ff;
+  --ku-color-info-subtle-hover: #d0ebff;
+
+  /* Interactive colors */
+  --ku-color-interactive-focus: #339af0;
+  --ku-color-interactive-hover: #228be6;
+  --ku-color-interactive-active: #1c7ed6;
+  --ku-color-interactive-disabled: #adb5bd;
+
+  /* Border colors */
+  --ku-color-border-default: #dee2e6;
+  --ku-color-border-hover: #adb5bd;
+  --ku-color-border-active: #868e96;
+
+  /* Focus ring */
+  --ku-focus-ring: 0 0 0 3px rgba(51, 154, 240, 0.5);
+  --ku-focus-ring-width-small: 2px;
+  --ku-focus-ring-width-medium: 3px;
+  --ku-focus-ring-width-large: 4px;
+  --ku-focus-ring-style: solid;
+  --ku-focus-ring-offset-small: 1px;
+  --ku-focus-ring-offset-medium: 2px;
+  --ku-focus-ring-offset-large: 3px;
+}
+
+/* Dark theme */
+[data-theme="dark"] {
+  /* Background colors */
+  --ku-color-background-default: #212529;
+  --ku-color-background-surface-1: #343a40;
+  --ku-color-background-surface-2: #495057;
+  --ku-color-background-surface-3: #868e96;
+  --ku-color-background-surface-4: #adb5bd;
+  --ku-color-background-surface-5: #ced4da;
+
+  /* Text colors */
+  --ku-color-text-primary: #f8f9fa;
+  --ku-color-text-secondary: #e9ecef;
+  --ku-color-text-disabled: #adb5bd;
+
+  /* Brand colors */
+  --ku-color-brand-primary: #339af0;
+  --ku-color-brand-hover: #228be6;
+  --ku-color-brand-active: #1c7ed6;
+
+  /* State colors */
+  --ku-color-success-enabled: #40c057;
+  --ku-color-success-hover: #37b24d;
+  --ku-color-success-active: #2f9e44;
+  --ku-color-success-subtle-background: #2b8a3e;
+  --ku-color-success-subtle-hover: #2f9e44;
+
+  --ku-color-warning-enabled: #fab005;
+  --ku-color-warning-hover: #f59f00;
+  --ku-color-warning-active: #f08c00;
+  --ku-color-warning-subtle-background: #e67700;
+  --ku-color-warning-subtle-hover: #f08c00;
+
+  --ku-color-error-enabled: #fa5252;
+  --ku-color-error-hover: #e03131;
+  --ku-color-error-active: #c92a2a;
+  --ku-color-error-subtle-background: #c92a2a;
+  --ku-color-error-subtle-hover: #e03131;
+
+  --ku-color-info-enabled: #339af0;
+  --ku-color-info-hover: #228be6;
+  --ku-color-info-active: #1c7ed6;
+  --ku-color-info-subtle-background: #1c7ed6;
+  --ku-color-info-subtle-hover: #228be6;
+
+  /* Interactive colors */
+  --ku-color-interactive-focus: #339af0;
+  --ku-color-interactive-hover: #228be6;
+  --ku-color-interactive-active: #1c7ed6;
+  --ku-color-interactive-disabled: #adb5bd;
+
+  /* Border colors */
+  --ku-color-border-default: #495057;
+  --ku-color-border-hover: #868e96;
+  --ku-color-border-active: #adb5bd;
+
+  /* Focus ring */
+  --ku-focus-ring: 0 0 0 3px rgba(51, 154, 240, 0.5);
+} 

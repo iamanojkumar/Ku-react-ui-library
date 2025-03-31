@@ -1,0 +1,121 @@
+.ku-avatar {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-family: var(--ku-font-family-base);
+  font-weight: var(--ku-font-weight-medium);
+  color: var(--ku-color-text-primary);
+  background-color: var(--ku-color-background-surface-3);
+  overflow: hidden;
+  user-select: none;
+}
+
+/* Sizes */
+.ku-avatar--xs {
+  width: var(--ku-avatar-size-xs);
+  height: var(--ku-avatar-size-xs);
+  font-size: var(--ku-avatar-font-size-xs);
+}
+
+.ku-avatar--sm {
+  width: var(--ku-avatar-size-sm);
+  height: var(--ku-avatar-size-sm);
+  font-size: var(--ku-avatar-font-size-sm);
+}
+
+.ku-avatar--md {
+  width: var(--ku-avatar-size-md);
+  height: var(--ku-avatar-size-md);
+  font-size: var(--ku-avatar-font-size-md);
+}
+
+.ku-avatar--lg {
+  width: var(--ku-avatar-size-lg);
+  height: var(--ku-avatar-size-lg);
+  font-size: var(--ku-avatar-font-size-lg);
+}
+
+.ku-avatar--xl {
+  width: var(--ku-avatar-size-xl);
+  height: var(--ku-avatar-size-xl);
+  font-size: var(--ku-avatar-font-size-xl);
+}
+
+/* Shapes */
+.ku-avatar--circle {
+  border-radius: var(--ku-radius-component-full);
+}
+
+.ku-avatar--square {
+  border-radius: var(--ku-radius-component-md);
+}
+
+/* Colors */
+.ku-avatar--default {
+  background-color: var(--ku-color-background-surface-3);
+  color: var(--ku-color-text-primary);
+}
+
+.ku-avatar--primary {
+  background-color: var(--ku-color-primary-subtle-background);
+  color: var(--ku-color-primary-enabled);
+}
+
+.ku-avatar--success {
+  background-color: var(--ku-color-success-subtle-background);
+  color: var(--ku-color-success-enabled);
+}
+
+.ku-avatar--warning {
+  background-color: var(--ku-color-warning-subtle-background);
+  color: var(--ku-color-warning-enabled);
+}
+
+.ku-avatar--error {
+  background-color: var(--ku-color-alert-subtle-background);
+  color: var(--ku-color-alert-enabled);
+}
+
+.ku-avatar--info {
+  background-color: var(--ku-color-info-subtle-background);
+  color: var(--ku-color-info-enabled);
+}
+
+/* Image */
+.ku-avatar__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+}
+
+/* Fallback & Initials */
+.ku-avatar__fallback,
+.ku-avatar__initials {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+}
+
+/* Group styles */
+.ku-avatar--grouped {
+  border: 2px solid var(--ku-avatar-border-color, var(--ku-color-background-surface-1));
+  margin-left: calc(-1 * var(--ku-spacing-2));
+  transition: transform var(--ku-duration-normal) var(--ku-ease-out);
+}
+
+.ku-avatar--grouped:hover {
+  transform: translateY(-2px);
+  z-index: 1;
+}
+
+/* Accessibility */
+.ku-avatar:focus-visible {
+  outline: 2px solid var(--ku-color-interactive-focus);
+  outline-offset: 2px;
+} 
