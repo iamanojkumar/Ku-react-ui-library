@@ -56,6 +56,22 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
    * @default true
    */
   spinnerInButton?: boolean;
+
+  /**
+   * Optional badge content to display
+   */
+  badge?: React.ReactNode;
+
+  /**
+   * Optional counter value to display
+   */
+  counter?: number;
+
+  /**
+   * Whether the button is pressed (for button groups)
+   * @default false
+   */
+  isPressed?: boolean;
   
   children: React.ReactNode;
 }
@@ -72,6 +88,9 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(({
   disabled,
   loadingText = 'Loading, please wait',
   spinnerInButton = true,
+  badge,
+  counter,
+  isPressed = false,
   ...props
 }, ref) => {
   const buttonClasses = classNames(
@@ -86,11 +105,16 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(({
   );
 
   // For screen readers to announce the loading state
-  const ariaProps = isLoading ? {
-    'aria-busy': true,
-    'aria-label': loadingText,
-    role: 'status',
-  } : {};
+  const ariaProps = {
+    ...(isLoading ? {
+      'aria-busy': true,
+      'aria-label': loadingText,
+      role: 'status',
+    } : {}),
+    ...(isPressed !== undefined ? {
+      'aria-pressed': isPressed,
+    } : {}),
+  };
 
   return (
     <button
@@ -100,6 +124,12 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(({
       {...ariaProps}
       {...props}
     >
+      {badge && (
+        <span className="ku-button__badge">
+          {badge}
+        </span>
+      )}
+
       {isLoading && spinnerInButton && (
         <span className="ku-button__loader" aria-hidden="true">
           <svg
@@ -114,25 +144,33 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(({
               cy="12"
               r="10"
               stroke="currentColor"
-              strokeWidth="4"
+              strokeWidth="var(--ku-button-loading-spinner-width)"
               strokeLinecap="round"
             />
           </svg>
         </span>
       )}
+
+      {!isLoading && leftIcon && (
+        <span className="ku-button__icon ku-button__icon--left" aria-hidden="true">
+          {leftIcon}
+        </span>
+      )}
+
       <span className="ku-button__content">
-        {!isLoading && leftIcon && (
-          <span className="ku-button__icon ku-button__icon--left" aria-hidden="true">
-            {leftIcon}
-          </span>
-        )}
         {children}
-        {!isLoading && rightIcon && (
-          <span className="ku-button__icon ku-button__icon--right" aria-hidden="true">
-            {rightIcon}
+        {counter !== undefined && (
+          <span className="ku-button__counter">
+            {counter}
           </span>
         )}
       </span>
+
+      {!isLoading && rightIcon && (
+        <span className="ku-button__icon ku-button__icon--right" aria-hidden="true">
+          {rightIcon}
+        </span>
+      )}
     </button>
   );
 });

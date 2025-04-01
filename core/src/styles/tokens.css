@@ -364,61 +364,95 @@
   --ku-button-focus-ring-color: var(--ku-color-interactive-focus);
 
   /* Button Tokens */
-  --ku-button-font-family: var(--ku-font-family-base);
-  --ku-button-font-weight: 500;
-  --ku-button-line-height: 1.5;
-  --ku-button-letter-spacing: 0.02em;
-  --ku-button-border-width: 1px;
-  --ku-button-radius: 0.375rem;
-  --ku-button-gap: 0.5rem;
-  --ku-button-min-width: 2.5rem;
-  --ku-button-disabled-opacity: 0.5;
-
-  /* Button Sizes */
+  /* Base Sizes */
   --ku-button-height-sm: 2rem;
   --ku-button-height-md: 2.5rem;
   --ku-button-height-lg: 3rem;
+  --ku-button-min-width: 2.5rem;
   
+  /* Button Padding */
   --ku-button-padding-x-sm: 0.75rem;
   --ku-button-padding-y-sm: 0.25rem;
   --ku-button-padding-x-md: 1rem;
   --ku-button-padding-y-md: 0.375rem;
   --ku-button-padding-x-lg: 1.25rem;
   --ku-button-padding-y-lg: 0.5rem;
-  
-  --ku-button-font-size-sm: 0.875rem;
-  --ku-button-font-size-md: 1rem;
-  --ku-button-font-size-lg: 1.125rem;
 
-  /* Button Colors */
+  /* Button Typography */
+  --ku-button-font-family: var(--ku-font-family-base);
+  --ku-button-font-size-sm: var(--ku-font-size-sm);
+  --ku-button-font-size-md: var(--ku-font-size-base);
+  --ku-button-font-size-lg: var(--ku-font-size-lg);
+  --ku-button-font-weight: var(--ku-font-weight-medium);
+  --ku-button-line-height: var(--ku-line-height-normal);
+  --ku-button-letter-spacing: var(--ku-letter-spacing-wide);
+
+  /* Button Layout */
+  --ku-button-gap: var(--ku-spacing-component-xs);
+  --ku-button-radius: var(--ku-radius-component-md);
+  --ku-button-border-width: var(--ku-border-width-thin);
+  --ku-button-border-style: var(--ku-border-style-solid);
+
+  /* Button Colors - Primary */
   --ku-button-primary-bg: var(--ku-color-brand-primary);
-  --ku-button-primary-text: #ffffff;
+  --ku-button-primary-text: var(--ku-color-neutral-white);
+  --ku-button-primary-border: var(--ku-color-brand-primary);
   --ku-button-primary-hover-bg: var(--ku-color-primary-800);
+  --ku-button-primary-hover-border: var(--ku-color-primary-800);
   --ku-button-primary-active-bg: var(--ku-color-primary-900);
+  --ku-button-primary-active-border: var(--ku-color-primary-900);
 
+  /* Button Colors - Secondary */
   --ku-button-secondary-bg: var(--ku-color-gray-300);
   --ku-button-secondary-text: var(--ku-color-gray-1200);
+  --ku-button-secondary-border: var(--ku-color-gray-300);
   --ku-button-secondary-hover-bg: var(--ku-color-gray-400);
+  --ku-button-secondary-hover-border: var(--ku-color-gray-400);
   --ku-button-secondary-active-bg: var(--ku-color-gray-500);
+  --ku-button-secondary-active-border: var(--ku-color-gray-500);
 
+  /* Button Colors - Outline */
+  --ku-button-outline-bg: transparent;
   --ku-button-outline-text: var(--ku-color-brand-primary);
   --ku-button-outline-border: var(--ku-color-brand-primary);
   --ku-button-outline-hover-bg: rgba(0, 115, 35, 0.04);
+  --ku-button-outline-hover-border: var(--ku-color-brand-primary);
   --ku-button-outline-active-bg: rgba(0, 115, 35, 0.1);
+  --ku-button-outline-active-border: var(--ku-color-brand-primary);
 
+  /* Button Colors - Ghost */
+  --ku-button-ghost-bg: transparent;
   --ku-button-ghost-text: var(--ku-color-brand-primary);
+  --ku-button-ghost-border: transparent;
   --ku-button-ghost-hover-bg: rgba(0, 115, 35, 0.04);
+  --ku-button-ghost-hover-border: transparent;
   --ku-button-ghost-active-bg: rgba(0, 115, 35, 0.1);
+  --ku-button-ghost-active-border: transparent;
+
+  /* Button States */
+  --ku-button-disabled-opacity: 0.5;
+  --ku-button-disabled-cursor: not-allowed;
 
   /* Button Focus */
+  --ku-button-focus-ring-width: var(--ku-focus-ring-width-medium);
+  --ku-button-focus-ring-style: var(--ku-focus-ring-style);
+  --ku-button-focus-ring-offset: var(--ku-focus-ring-offset-medium);
   --ku-button-focus-ring-color: var(--ku-color-brand-primary);
-  --ku-button-focus-ring-width: 2px;
-  --ku-button-focus-ring-style: solid;
-  --ku-button-focus-ring-offset: 2px;
 
   /* Button Loading */
   --ku-button-loading-spinner-size: 1.25rem;
+  --ku-button-loading-spinner-width: 0.25rem;
+  --ku-button-loading-opacity: 0.7;
+  --ku-button-loading-animation: ku-spin 1s linear infinite;
+
+  /* Button Icon */
   --ku-button-icon-size: 1.25rem;
+  --ku-button-icon-gap: var(--ku-spacing-component-xs);
+
+  /* Button Animation */
+  --ku-button-transition: all var(--ku-duration-normal) var(--ku-ease-out);
+  --ku-button-transform-active: scale(0.98);
+  --ku-button-transform-hover: scale(1.02);
 
   /* Checkbox Tokens */
   /* Base Sizes */
@@ -560,6 +594,49 @@
   --ku-checkbox-disabled-bg: var(--ku-color-background-surface-disabled);
   --ku-checkbox-disabled-border: var(--ku-color-border-disabled);
   --ku-checkbox-label-disabled-color: var(--ku-color-text-disabled);
+
+  /* Button Badge */
+  --ku-button-badge-size: 1.25rem;
+  --ku-button-badge-font-size: var(--ku-font-size-xs);
+  --ku-button-badge-font-weight: var(--ku-font-weight-medium);
+  --ku-button-badge-bg: var(--ku-color-alert-enabled);
+  --ku-button-badge-color: var(--ku-color-neutral-white);
+  --ku-button-badge-border-radius: var(--ku-radius-component-full);
+  --ku-button-badge-padding: var(--ku-spacing-component-2xs) var(--ku-spacing-component-xs);
+  --ku-button-badge-offset: -0.25rem;
+  --ku-button-badge-border: 2px solid var(--ku-color-neutral-white);
+
+  /* Button Counter */
+  --ku-button-counter-font-size: var(--ku-font-size-xs);
+  --ku-button-counter-font-weight: var(--ku-font-weight-medium);
+  --ku-button-counter-bg: rgba(0, 0, 0, 0.08);
+  --ku-button-counter-color: inherit;
+  --ku-button-counter-border-radius: var(--ku-radius-component-full);
+  --ku-button-counter-padding: var(--ku-spacing-component-2xs) var(--ku-spacing-component-xs);
+  --ku-button-counter-min-width: 1rem;
+
+  /* Button Tooltip */
+  --ku-button-tooltip-bg: var(--ku-color-gray-1200);
+  --ku-button-tooltip-color: var(--ku-color-neutral-white);
+  --ku-button-tooltip-font-size: var(--ku-font-size-xs);
+  --ku-button-tooltip-font-weight: var(--ku-font-weight-normal);
+  --ku-button-tooltip-padding: var(--ku-spacing-component-xs) var(--ku-spacing-component-sm);
+  --ku-button-tooltip-border-radius: var(--ku-radius-component-sm);
+  --ku-button-tooltip-max-width: 20rem;
+  --ku-button-tooltip-z-index: var(--ku-z-index-tooltip);
+  --ku-button-tooltip-arrow-size: 0.375rem;
+  --ku-button-tooltip-offset: 0.5rem;
+
+  /* Button Group */
+  --ku-button-group-gap: calc(var(--ku-button-border-width) * -1);
+  --ku-button-group-spacing: var(--ku-spacing-component-xs);
+  --ku-button-group-border-radius: var(--ku-radius-component-md);
+  --ku-button-group-selected-bg: var(--ku-color-primary-600);
+  --ku-button-group-selected-color: var(--ku-color-neutral-white);
+  --ku-button-group-selected-border: var(--ku-color-primary-600);
+  --ku-button-group-hover-bg: var(--ku-color-primary-100);
+  --ku-button-group-hover-border: var(--ku-color-primary-600);
+  --ku-button-group-focus-ring-color: var(--ku-color-primary-600);
 }
 
 /* Dark Theme */
@@ -721,6 +798,22 @@
   --ku-button-ghost-text: var(--ku-color-brand-primary);
   --ku-button-ghost-hover-bg: rgba(75, 166, 75, 0.12);
   --ku-button-ghost-active-bg: rgba(75, 166, 75, 0.2);
+
+  /* Button Badge Dark Theme */
+  --ku-button-badge-bg: var(--ku-color-alert-enabled);
+  --ku-button-badge-color: var(--ku-color-neutral-white);
+  --ku-button-badge-border: 2px solid var(--ku-color-gray-900);
+
+  /* Button Counter Dark Theme */
+  --ku-button-counter-bg: rgba(255, 255, 255, 0.1);
+
+  /* Button Tooltip Dark Theme */
+  --ku-button-tooltip-bg: var(--ku-color-gray-800);
+  --ku-button-tooltip-color: var(--ku-color-gray-100);
+
+  /* Button Group Dark Theme */
+  --ku-button-group-selected-bg: var(--ku-color-primary-700);
+  --ku-button-group-hover-bg: var(--ku-color-primary-900);
 }
 
 /* High Contrast Theme */

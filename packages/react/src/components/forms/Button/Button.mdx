@@ -1,5 +1,6 @@
-import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs';
+import { Meta, Story, Canvas, ArgTypes } from '@storybook/blocks';
 import * as ButtonStories from './Button.stories';
+import { Button } from './Button';
 
 <Meta of={ButtonStories} />
 
@@ -15,71 +16,167 @@ Experiment with the Button component using the controls below:
 
 ## Props
 
-The Button component accepts the following props:
+<ArgTypes of={ButtonStories} />
 
-<ArgsTable story="Playground" />
-
-## Examples
+## Features
 
 ### Variants
 
-Different visual styles of the button.
+The Button component supports multiple visual styles to match different use cases.
 
-<Canvas of={ButtonStories.Variants} />
+<Canvas>
+  <Story of={ButtonStories.Primary} />
+  <Story of={ButtonStories.Secondary} />
+  <Story of={ButtonStories.Outline} />
+  <Story of={ButtonStories.Ghost} />
+</Canvas>
 
 ### Sizes
 
-Available size variations.
+Available in three sizes to fit different contexts.
 
-<Canvas of={ButtonStories.Sizes} />
+<Canvas>
+  <Story of={ButtonStories.Sizes} />
+</Canvas>
+
+### Icons
+
+Buttons can include icons before or after the text, or can be icon-only buttons.
+
+<Canvas>
+  <Story of={ButtonStories.WithLeftIcon} />
+  <Story of={ButtonStories.WithRightIcon} />
+  <Story of={ButtonStories.IconOnly} />
+</Canvas>
 
 ### States
 
-Button states including loading and disabled.
+Buttons support various states including loading, disabled, and full width.
 
-<Canvas of={ButtonStories.States} />
+<Canvas>
+  <Story of={ButtonStories.Loading} />
+  <Story of={ButtonStories.Disabled} />
+  <Story of={ButtonStories.FullWidth} />
+</Canvas>
 
-### With Icons
+### Badges and Counters
 
-Buttons with icons in different positions.
+Buttons can display badges for notifications or counters for numeric values. Badges are typically used to show status or draw attention, while counters show numeric values.
 
-<Canvas of={ButtonStories.Icons} />
+#### Badges
+Use badges to highlight new items, status changes, or draw attention to specific elements:
 
-### Full Width
-
-Button that takes up the full width of its container.
-
-<Canvas of={ButtonStories.FullWidth} />
-
-## Usage
+<Canvas>
+  <Story of={ButtonStories.WithBadge} />
+</Canvas>
 
 ```jsx
-import { Button } from '@ku-design-system/react';
+// Notification badge
+<Button
+  variant="secondary"
+  leftIcon={<IconBell />}
+  badge="New"
+>
+  Notifications
+</Button>
 
-// Basic usage
-<Button>Click me</Button>
+// Numeric badge with icon
+<Button
+  variant="outline"
+  leftIcon={<IconMessage />}
+  badge="3"
+>
+  Messages
+</Button>
 
-// With variants
-<Button variant="primary">Primary</Button>
-<Button variant="secondary">Secondary</Button>
-<Button variant="outline">Outline</Button>
-<Button variant="ghost">Ghost</Button>
-
-// With sizes
-<Button size="sm">Small</Button>
-<Button size="md">Medium</Button>
-<Button size="lg">Large</Button>
-
-// With states
-<Button isLoading>Loading...</Button>
-<Button disabled>Disabled</Button>
-
-// With icons
-<Button icon="→" iconPosition="right">Next</Button>
-
-// Full width
-<Button fullWidth>Full Width Button</Button>
+// Simple badge
+<Button
+  variant="ghost"
+  badge="!"
+>
+  Updates
+</Button>
 ```
+
+#### Counters
+Use counters to display numeric values that can change over time, like likes, comments, or items:
+
+<Canvas>
+  <Story of={ButtonStories.WithCounter} />
+</Canvas>
+
+```jsx
+// Interactive counter with color change
+<Button
+  variant="outline"
+  leftIcon={<IconHeart color={likes > 42 ? '#ff4d4d' : undefined} />}
+  counter={likes}
+  onClick={() => setLikes(prev => prev + 1)}
+>
+  Likes
+</Button>
+
+// Message counter
+<Button
+  variant="secondary"
+  leftIcon={<IconMessage />}
+  counter={messages}
+>
+  Messages
+</Button>
+
+// Simple counter
+<Button
+  variant="ghost"
+  counter={updates}
+>
+  Updates
+</Button>
+```
+
+**Key Differences:**
+- **Badges** are typically used for status indicators or drawing attention
+- **Counters** are specifically for numeric values and often update dynamically
+- Badges can contain any content (text, numbers, icons)
+- Counters are styled consistently and only contain numbers
+
+### Button Groups
+
+Group buttons together with radio or checkbox behavior.
+
+<Canvas>
+  <Story of={ButtonStories.ButtonGroups} />
+</Canvas>
+
+## Design Tokens
+
+The Button component uses the following design tokens:
+
+### Base Sizes
+- Height: `--ku-button-height-sm`, `--ku-button-height-md`, `--ku-button-height-lg`
+- Min Width: `--ku-button-min-width`
+
+### Padding
+- Small: `--ku-button-padding-x-sm`, `--ku-button-padding-y-sm`
+- Medium: `--ku-button-padding-x-md`, `--ku-button-padding-y-md`
+- Large: `--ku-button-padding-x-lg`, `--ku-button-padding-y-lg`
+
+### Typography
+- Font Family: `--ku-button-font-family`
+- Font Size: `--ku-button-font-size-sm`, `--ku-button-font-size-md`, `--ku-button-font-size-lg`
+- Font Weight: `--ku-button-font-weight`
+- Line Height: `--ku-button-line-height`
+- Letter Spacing: `--ku-button-letter-spacing`
+
+### Layout
+- Gap: `--ku-button-gap`
+- Border Radius: `--ku-button-radius`
+- Border Width: `--ku-button-border-width`
+
+### States
+- Disabled Opacity: `--ku-button-disabled-opacity`
+- Focus Ring: `--ku-button-focus-ring-width`, `--ku-button-focus-ring-style`, `--ku-button-focus-ring-color`
+- Loading: `--ku-button-loading-spinner-size`, `--ku-button-loading-opacity`
 
 ## Accessibility
 
@@ -87,34 +184,11 @@ The Button component follows accessibility best practices:
 
 - Uses semantic HTML (`<button>` element)
 - Supports keyboard navigation
-- Includes proper ARIA attributes
+- Includes proper ARIA attributes for states (loading, disabled)
 - Maintains sufficient color contrast
 - Supports screen readers
 - Respects reduced motion preferences
 - Supports high contrast mode
-
-## Design Tokens
-
-The Button component uses the following design tokens:
-
-### Colors
-- Primary: `--ku-color-brand-primary`
-- Secondary: `--ku-color-background-surface-3`
-- Outline: `--ku-color-brand-primary`
-- Ghost: `--ku-color-text-primary`
-
-### Spacing
-- Gap: `--ku-button-gap`
-- Padding: `--ku-button-padding-x-md`, `--ku-button-padding-y-md`
-- Height: `--ku-button-height-md`
-
-### Typography
-- Font Size: `--ku-button-font-size-md`
-- Font Weight: `--ku-button-font-weight`
-- Line Height: `--ku-button-line-height`
-
-### Border Radius
-- Radius: `--ku-button-radius`
 
 ## Best Practices
 
@@ -151,22 +225,29 @@ The Button component uses the following design tokens:
 
 ### Navigation Button
 ```jsx
-<Button variant="ghost" size="sm" icon="←" iconPosition="left">
+<Button variant="ghost" size="sm" leftIcon={<IconArrowLeft />}>
   Go Back
 </Button>
 ```
 
 ### Action Button with Loading
 ```jsx
-<Button variant="secondary" isLoading>
-  Processing...
+<Button variant="secondary" isLoading loadingText="Processing...">
+  Save Changes
 </Button>
 ```
 
-### Button Group
+### Button Group with Radio Behavior
 ```jsx
-<div style={{ display: 'flex', gap: '1rem' }}>
-  <Button variant="primary">Save</Button>
-  <Button variant="outline">Cancel</Button>
-</div>
+<ButtonGroup type="radio">
+  <Button variant="outline" isPressed={view === 'list'}>List</Button>
+  <Button variant="outline" isPressed={view === 'grid'}>Grid</Button>
+</ButtonGroup>
+```
+
+### Button with Badge and Counter
+```jsx
+<Button variant="secondary" badge="New" counter={5}>
+  Notifications
+</Button>
 ``` 
