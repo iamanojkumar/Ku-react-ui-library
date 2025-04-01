@@ -126,6 +126,61 @@
   --ku-alert-border-width: var(--ku-border-width-thin);
   --ku-alert-min-width: 320px;
   --ku-alert-max-width: 800px;
+
+  /* TextArea Base */
+  --ku-textarea-min-width-sm: 200px;
+  --ku-textarea-min-width-md: 300px;
+  --ku-textarea-min-width-lg: 400px;
+  --ku-textarea-max-width: 800px;
+
+  /* TextArea Layout */
+  --ku-textarea-border-width: var(--ku-border-width-thin);
+  --ku-textarea-border-style: solid;
+  --ku-textarea-border-radius-sm: var(--ku-radius-component-sm);
+  --ku-textarea-border-radius-md: var(--ku-radius-component-md);
+  --ku-textarea-border-radius-lg: var(--ku-radius-component-lg);
+
+  /* TextArea Heights */
+  --ku-textarea-min-height-sm: 80px;
+  --ku-textarea-min-height-md: 120px;
+  --ku-textarea-min-height-lg: 160px;
+  --ku-textarea-max-height: 400px;
+
+  /* TextArea Spacing */
+  --ku-textarea-padding-x-sm: var(--ku-spacing-component-sm);
+  --ku-textarea-padding-y-sm: var(--ku-spacing-component-2xs);
+  --ku-textarea-padding-x-md: var(--ku-spacing-component-md);
+  --ku-textarea-padding-y-md: var(--ku-spacing-component-xs);
+  --ku-textarea-padding-x-lg: var(--ku-spacing-component-lg);
+  --ku-textarea-padding-y-lg: var(--ku-spacing-component-sm);
+
+  /* TextArea Typography */
+  --ku-textarea-font-size-sm: var(--ku-font-size-sm);
+  --ku-textarea-font-size-md: var(--ku-font-size-base);
+  --ku-textarea-font-size-lg: var(--ku-font-size-lg);
+  --ku-textarea-line-height: var(--ku-line-height-normal);
+
+  /* TextArea Label */
+  --ku-textarea-label-font-size: var(--ku-font-size-sm);
+  --ku-textarea-label-font-weight: var(--ku-font-weight-medium);
+  --ku-textarea-label-line-height: var(--ku-line-height-normal);
+  --ku-textarea-label-margin-bottom: var(--ku-spacing-component-2xs);
+
+  /* TextArea Helper & Error */
+  --ku-textarea-helper-font-size: var(--ku-font-size-sm);
+  --ku-textarea-helper-line-height: var(--ku-line-height-normal);
+  --ku-textarea-helper-margin-top: var(--ku-spacing-component-2xs);
+  --ku-textarea-error-margin-top: var(--ku-spacing-component-2xs);
+
+  /* TextArea States */
+  --ku-textarea-disabled-opacity: 0.5;
+  --ku-textarea-focus-ring-width: var(--ku-border-width-thin);
+  --ku-textarea-focus-ring-color: var(--ku-color-primary-100);
+  --ku-textarea-error-ring-color: var(--ku-color-alert-1);
+
+  /* TextArea Animation */
+  --ku-textarea-transition-duration: var(--ku-transition-duration-normal);
+  --ku-textarea-transition-timing: var(--ku-transition-timing-normal);
 }
 
 /* Apply typography tokens to components */

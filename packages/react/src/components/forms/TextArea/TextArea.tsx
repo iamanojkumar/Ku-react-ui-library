@@ -1,5 +1,4 @@
-import React from 'react';
-import './TextArea.css';
+import React, { useEffect, useRef } from 'react';
 
 export interface TextAreaProps extends Omit<React.TextareaHTMLAttributes<HTMLTextAreaElement>, 'size'> {
   /** The label for the textarea */
@@ -18,6 +17,8 @@ export interface TextAreaProps extends Omit<React.TextareaHTMLAttributes<HTMLTex
   ariaLabel?: string;
   /** ID for connecting label with textarea */
   id?: string;
+  /** Maximum height before scrolling begins */
+  maxHeight?: string;
 }
 
 const TextArea = React.forwardRef<HTMLTextAreaElement, TextAreaProps>(
@@ -33,10 +34,55 @@ const TextArea = React.forwardRef<HTMLTextAreaElement, TextAreaProps>(
       id,
       ariaLabel,
       placeholder,
+      maxHeight,
+      onChange,
+      value,
+      defaultValue,
       ...props
     },
     ref
   ) => {
+    const textareaRef = useRef<HTMLTextAreaElement | null>(null);
+    const combinedRef = (node: HTMLTextAreaElement) => {
+      textareaRef.current = node;
+      if (typeof ref === 'function') {
+        ref(node);
+      } else if (ref) {
+        ref.current = node;
+      }
+    };
+
+    const adjustHeight = () => {
+      const textarea = textareaRef.current;
+      if (!textarea) return;
+
+      // Reset height to auto to get the correct scrollHeight
+      textarea.style.height = 'auto';
+      
+      // Calculate new height
+      const newHeight = textarea.scrollHeight;
+      
+      // Apply maxHeight if specified and content exceeds it
+      if (maxHeight) {
+        const maxHeightValue = parseInt(maxHeight);
+        textarea.style.height = `${Math.min(newHeight, maxHeightValue)}px`;
+        textarea.style.overflowY = newHeight > maxHeightValue ? 'auto' : 'hidden';
+      } else {
+        textarea.style.height = `${newHeight}px`;
+        textarea.style.overflowY = 'hidden';
+      }
+    };
+
+    // Adjust height on mount and when content changes
+    useEffect(() => {
+      adjustHeight();
+    }, [value, defaultValue]);
+
+    const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+      adjustHeight();
+      onChange?.(e);
+    };
+
     const textareaId = id || `textarea-${Math.random().toString(36).substr(2, 9)}`;
     const helperTextId = `${textareaId}-helper`;
     const errorId = `${textareaId}-error`;
@@ -53,7 +99,7 @@ const TextArea = React.forwardRef<HTMLTextAreaElement, TextAreaProps>(
         )}
         <div className={`ku-textarea-field ku-textarea-field--${variant}`}>
           <textarea
-            ref={ref}
+            ref={combinedRef}
             id={textareaId}
             className={`ku-textarea ku-textarea--${variant} ku-textarea--${size} ${
               error ? 'ku-textarea--error' : ''
@@ -63,6 +109,10 @@ const TextArea = React.forwardRef<HTMLTextAreaElement, TextAreaProps>(
             aria-describedby={`${helperText ? helperTextId : ''} ${error ? errorId : ''}`}
             disabled={disabled}
             placeholder={placeholder}
+            onChange={handleChange}
+            value={value}
+            defaultValue={defaultValue}
+            style={{ maxHeight: maxHeight }}
             {...props}
           />
         </div>
