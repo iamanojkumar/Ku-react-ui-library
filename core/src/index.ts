@@ -1,7 +1,3 @@
-// Import styles
-import './styles/tokens.css';
-import './styles/fonts.css';
-
 // Import tokens
 import { lightColors, darkColors, getColorValue } from './tokens/colors';
 import type { ColorToken } from './tokens/colors';
@@ -24,9 +20,6 @@ export {
 
 // Export types
 export type { ColorToken, ThemeVariant };
-
-// Export CSS variables
-export * from './styles/variables.css';
 
 // Export utilities
 export * from './utils/cssVariables';

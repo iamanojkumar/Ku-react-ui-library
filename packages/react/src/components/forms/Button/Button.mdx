@@ -1,0 +1,172 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs';
+import * as ButtonStories from './Button.stories';
+
+<Meta of={ButtonStories} />
+
+# Button
+
+A versatile button component that supports multiple variants, sizes, and states.
+
+## Interactive Playground
+
+Experiment with the Button component using the controls below:
+
+<Canvas of={ButtonStories.Playground} />
+
+## Props
+
+The Button component accepts the following props:
+
+<ArgsTable story="Playground" />
+
+## Examples
+
+### Variants
+
+Different visual styles of the button.
+
+<Canvas of={ButtonStories.Variants} />
+
+### Sizes
+
+Available size variations.
+
+<Canvas of={ButtonStories.Sizes} />
+
+### States
+
+Button states including loading and disabled.
+
+<Canvas of={ButtonStories.States} />
+
+### With Icons
+
+Buttons with icons in different positions.
+
+<Canvas of={ButtonStories.Icons} />
+
+### Full Width
+
+Button that takes up the full width of its container.
+
+<Canvas of={ButtonStories.FullWidth} />
+
+## Usage
+
+```jsx
+import { Button } from '@ku-design-system/react';
+
+// Basic usage
+<Button>Click me</Button>
+
+// With variants
+<Button variant="primary">Primary</Button>
+<Button variant="secondary">Secondary</Button>
+<Button variant="outline">Outline</Button>
+<Button variant="ghost">Ghost</Button>
+
+// With sizes
+<Button size="sm">Small</Button>
+<Button size="md">Medium</Button>
+<Button size="lg">Large</Button>
+
+// With states
+<Button isLoading>Loading...</Button>
+<Button disabled>Disabled</Button>
+
+// With icons
+<Button icon="→" iconPosition="right">Next</Button>
+
+// Full width
+<Button fullWidth>Full Width Button</Button>
+```
+
+## Accessibility
+
+The Button component follows accessibility best practices:
+
+- Uses semantic HTML (`<button>` element)
+- Supports keyboard navigation
+- Includes proper ARIA attributes
+- Maintains sufficient color contrast
+- Supports screen readers
+- Respects reduced motion preferences
+- Supports high contrast mode
+
+## Design Tokens
+
+The Button component uses the following design tokens:
+
+### Colors
+- Primary: `--ku-color-brand-primary`
+- Secondary: `--ku-color-background-surface-3`
+- Outline: `--ku-color-brand-primary`
+- Ghost: `--ku-color-text-primary`
+
+### Spacing
+- Gap: `--ku-button-gap`
+- Padding: `--ku-button-padding-x-md`, `--ku-button-padding-y-md`
+- Height: `--ku-button-height-md`
+
+### Typography
+- Font Size: `--ku-button-font-size-md`
+- Font Weight: `--ku-button-font-weight`
+- Line Height: `--ku-button-line-height`
+
+### Border Radius
+- Radius: `--ku-button-radius`
+
+## Best Practices
+
+1. **Use Primary Buttons Sparingly**
+   - Reserve primary buttons for the main call-to-action
+   - Use secondary or outline buttons for alternative actions
+
+2. **Consistent Sizing**
+   - Use medium size as the default
+   - Use small size for dense interfaces
+   - Use large size for important actions or touch interfaces
+
+3. **Clear Labels**
+   - Use clear, action-oriented text
+   - Avoid generic labels like "Click here" or "OK"
+
+4. **Loading States**
+   - Show loading state when an action is in progress
+   - Disable the button during loading to prevent double-clicks
+
+5. **Icon Usage**
+   - Use icons to enhance visual recognition
+   - Ensure icons are meaningful and not decorative
+   - Maintain consistent icon placement across the interface
+
+## Examples
+
+### Form Submit Button
+```jsx
+<Button variant="primary" size="lg" fullWidth>
+  Submit Form
+</Button>
+```
+
+### Navigation Button
+```jsx
+<Button variant="ghost" size="sm" icon="←" iconPosition="left">
+  Go Back
+</Button>
+```
+
+### Action Button with Loading
+```jsx
+<Button variant="secondary" isLoading>
+  Processing...
+</Button>
+```
+
+### Button Group
+```jsx
+<div style={{ display: 'flex', gap: '1rem' }}>
+  <Button variant="primary">Save</Button>
+  <Button variant="outline">Cancel</Button>
+</div>
+``` 

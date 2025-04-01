@@ -5,19 +5,26 @@ import { resolve } from 'path';
 export default defineConfig({
   plugins: [
     react({
-      jsxRuntime: 'automatic'
+      jsxImportSource: '@emotion/react',
+      babel: {
+        plugins: ['@emotion/babel-plugin']
+      }
     })
   ],
   resolve: {
     alias: {
-      '@ku/core': resolve(__dirname, './packages/core/src'),
-      '@ku/react': resolve(__dirname, './packages/react/src')
+      '@': resolve(__dirname, 'packages/react/src'),
+      '@ku/react': resolve(__dirname, 'packages/react/src'),
+      '@ku/core': resolve(__dirname, 'core/src'),
+      '@ku-design-system/core': resolve(__dirname, 'core')
     }
   },
   optimizeDeps: {
     include: [
       'react',
       'react-dom',
+      '@emotion/react',
+      '@emotion/styled',
       '@storybook/addon-docs/preview.js',
       '@storybook/addon-actions/preview.js',
       '@storybook/addon-links/preview.js',
@@ -36,15 +43,25 @@ export default defineConfig({
     exclude: ['@ku/core', '@ku/react']
   },
   build: {
+    target: 'es2018',
+    sourcemap: true,
+    lib: {
+      entry: resolve(__dirname, 'packages/react/src/index.ts'),
+      name: 'KuReact',
+      fileName: (format) => `ku-react.${format}.js`,
+      formats: ['es', 'umd']
+    },
     commonjsOptions: {
       include: [/node_modules/]
     },
     rollupOptions: {
-      external: ['react', 'react-dom', '@ku/core'],
+      external: ['react', 'react-dom', '@emotion/react', '@emotion/styled', '@tabler/icons-react'],
       output: {
         globals: {
           react: 'React',
-          'react-dom': 'ReactDOM'
+          'react-dom': 'ReactDOM',
+          '@emotion/react': '@emotion/react',
+          '@emotion/styled': '@emotion/styled'
         }
       }
     }
