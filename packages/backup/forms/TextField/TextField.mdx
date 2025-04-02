@@ -1,0 +1,172 @@
+import { Meta, Story, Canvas, ArgTypes } from '@storybook/blocks';
+import * as TextFieldStories from './TextField.stories';
+
+<Meta of={TextFieldStories} />
+
+# TextField
+
+The TextField component is a versatile input field that allows users to enter and edit text. It supports various styles, sizes, and states to accommodate different use cases.
+
+## Features
+
+- Multiple variants: outlined, filled, and subtle
+- Different sizes: small, medium, and large
+- Support for labels, helper text, and error messages
+- Icons and affixes (prefix/suffix)
+- Disabled and error states
+- Dark theme support
+- High contrast mode support
+- Reduced motion support
+
+## Usage
+
+```tsx
+import { TextField } from '@ku/react';
+
+function MyForm() {
+  return (
+    <TextField
+      label="Username"
+      placeholder="Enter your username"
+      helperText="Must be at least 3 characters"
+    />
+  );
+}
+```
+
+## Examples
+
+### Basic TextField
+
+A simple text input with a label.
+
+<Canvas>
+  <Story of={TextFieldStories.Default} />
+</Canvas>
+
+### Variants
+
+TextField comes in three variants: outlined (default), filled, and subtle.
+
+<Canvas>
+  <Story of={TextFieldStories.Variants} />
+</Canvas>
+
+### Sizes
+
+Available in three sizes: small, medium (default), and large.
+
+<Canvas>
+  <Story of={TextFieldStories.Sizes} />
+</Canvas>
+
+### With Icons
+
+TextField can include start and/or end icons.
+
+<Canvas>
+  <Story of={TextFieldStories.WithIcons} />
+</Canvas>
+
+### With Affixes
+
+Add prefix and/or suffix elements to the input.
+
+<Canvas>
+  <Story of={TextFieldStories.WithAffixes} />
+</Canvas>
+
+### States
+
+TextField supports various states including disabled and error.
+
+<Canvas>
+  <Story of={TextFieldStories.States} />
+</Canvas>
+
+### With Helper Text
+
+Add helper text below the input for additional context.
+
+<Canvas>
+  <Story of={TextFieldStories.WithHelperText} />
+</Canvas>
+
+### With Error
+
+Display error messages and error state styling.
+
+<Canvas>
+  <Story of={TextFieldStories.WithError} />
+</Canvas>
+
+## Props
+
+<ArgTypes of={TextFieldStories} />
+
+## Accessibility
+
+The TextField component follows WAI-ARIA guidelines for form inputs:
+
+- Uses semantic HTML elements (`<label>`, `<input>`)
+- Supports aria-label and aria-describedby
+- Provides visual feedback for focus and error states
+- Works with screen readers
+- Supports high contrast mode
+- Respects reduced motion preferences
+
+## Design Tokens
+
+The TextField component uses the following design tokens for consistent styling:
+
+### Spacing
+- `--ku-textfield-padding-x-sm`
+- `--ku-textfield-padding-y-sm`
+- `--ku-textfield-padding-x-md`
+- `--ku-textfield-padding-y-md`
+- `--ku-textfield-padding-x-lg`
+- `--ku-textfield-padding-y-lg`
+
+### Typography
+- `--ku-textfield-font-size-sm`
+- `--ku-textfield-font-size-md`
+- `--ku-textfield-font-size-lg`
+- `--ku-textfield-line-height`
+- `--ku-textfield-label-font-size`
+- `--ku-textfield-label-font-weight`
+- `--ku-textfield-label-line-height`
+- `--ku-textfield-helper-font-size`
+- `--ku-textfield-helper-line-height`
+
+### Colors
+- Uses semantic color tokens from the design system
+- Supports dark theme with `-dark` variants
+- High contrast mode compatible
+
+### Sizes
+- `--ku-textfield-height-sm`
+- `--ku-textfield-height-md`
+- `--ku-textfield-height-lg`
+- `--ku-textfield-min-width`
+- `--ku-textfield-max-width`
+
+### Borders
+- `--ku-textfield-border-width`
+- `--ku-textfield-border-style`
+- `--ku-textfield-border-radius-sm`
+- `--ku-textfield-border-radius-md`
+- `--ku-textfield-border-radius-lg`
+
+### Animation
+- `--ku-textfield-transition-duration`
+- `--ku-textfield-transition-timing`
+
+## Best Practices
+
+1. Always provide a label for the input field
+2. Use helper text to provide additional context when needed
+3. Display error messages when validation fails
+4. Choose the appropriate variant based on the context
+5. Use consistent sizing within a form
+6. Ensure sufficient color contrast for accessibility
+7. Test with screen readers and keyboard navigation 

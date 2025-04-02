@@ -1,0 +1,345 @@
+@import '../../../styles/tokens.css';
+
+.ku-textfield-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ku-textfield-label-gap);
+  width: 100%;
+  max-width: var(--ku-textfield-max-width);
+  min-width: var(--ku-textfield-min-width);
+  font-family: var(--ku-font-family-base);
+}
+
+/* Label styles */
+.ku-textfield-label {
+  display: flex;
+  align-items: center;
+  gap: var(--ku-textfield-label-gap);
+  color: var(--ku-color-text-primary);
+  font-size: var(--ku-textfield-label-font-size);
+  font-weight: var(--ku-textfield-label-font-weight);
+  line-height: var(--ku-textfield-label-line-height);
+  margin-bottom: var(--ku-textfield-label-margin-bottom);
+  cursor: pointer;
+}
+
+.ku-textfield-disabled .ku-textfield-label {
+  color: var(--ku-color-text-disabled);
+  cursor: not-allowed;
+}
+
+.ku-textfield-label-icon {
+  display: flex;
+  align-items: center;
+  color: var(--ku-color-text-secondary);
+}
+
+/* Input wrapper */
+.ku-textfield-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+/* Base input styles */
+.ku-textfield-input {
+  width: 100%;
+  height: var(--ku-textfield-height-md);
+  font-family: var(--ku-font-family-base);
+  font-size: var(--ku-textfield-font-size-md);
+  line-height: var(--ku-textfield-line-height);
+  color: var(--ku-color-text-primary);
+  background-color: var(--ku-color-background-surface-1);
+  border: var(--ku-textfield-border-width) var(--ku-textfield-border-style) var(--ku-color-border-1);
+  border-radius: var(--ku-textfield-border-radius-md);
+  padding: var(--ku-textfield-padding-y-md) var(--ku-textfield-padding-x-md);
+  transition: all var(--ku-textfield-transition-duration) var(--ku-textfield-transition-timing);
+}
+
+.ku-textfield-input::placeholder {
+  color: var(--ku-color-text-subtle);
+  opacity: 1;
+}
+
+/* Variants */
+.ku-textfield-outlined .ku-textfield-input {
+  background-color: var(--ku-color-background-surface-1);
+  border-color: var(--ku-color-border-1);
+}
+
+.ku-textfield-outlined .ku-textfield-input:hover:not(:disabled) {
+  border-color: var(--ku-color-border-2);
+  background-color: var(--ku-color-background-surface-2);
+}
+
+.ku-textfield-outlined .ku-textfield-input:focus {
+  outline: none;
+  border-color: var(--ku-color-primary-500);
+  box-shadow: 0 0 0 var(--ku-textfield-focus-ring-width) var(--ku-textfield-focus-ring-color);
+}
+
+.ku-textfield-filled .ku-textfield-input {
+  background-color: var(--ku-color-background-surface-2);
+  border-color: transparent;
+}
+
+.ku-textfield-filled .ku-textfield-input:hover:not(:disabled) {
+  background-color: var(--ku-color-background-surface-3);
+}
+
+.ku-textfield-filled .ku-textfield-input:focus {
+  outline: none;
+  background-color: var(--ku-color-background-surface-1);
+  border-color: var(--ku-color-primary-500);
+  box-shadow: 0 0 0 var(--ku-textfield-focus-ring-width) var(--ku-textfield-focus-ring-color);
+}
+
+.ku-textfield-subtle .ku-textfield-input {
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.ku-textfield-subtle .ku-textfield-input:hover:not(:disabled) {
+  background-color: var(--ku-color-background-surface-2);
+}
+
+.ku-textfield-subtle .ku-textfield-input:focus {
+  outline: none;
+  background-color: var(--ku-color-background-surface-1);
+  border-color: var(--ku-color-primary-500);
+  box-shadow: 0 0 0 var(--ku-textfield-focus-ring-width) var(--ku-textfield-focus-ring-color);
+}
+
+/* Sizes */
+.ku-textfield-sm .ku-textfield-input {
+  height: var(--ku-textfield-height-sm);
+  padding: var(--ku-textfield-padding-y-sm) var(--ku-textfield-padding-x-sm);
+  font-size: var(--ku-textfield-font-size-sm);
+  border-radius: var(--ku-textfield-border-radius-sm);
+}
+
+.ku-textfield-md .ku-textfield-input {
+  height: var(--ku-textfield-height-md);
+  padding: var(--ku-textfield-padding-y-md) var(--ku-textfield-padding-x-md);
+  font-size: var(--ku-textfield-font-size-md);
+  border-radius: var(--ku-textfield-border-radius-md);
+}
+
+.ku-textfield-lg .ku-textfield-input {
+  height: var(--ku-textfield-height-lg);
+  padding: var(--ku-textfield-padding-y-lg) var(--ku-textfield-padding-x-lg);
+  font-size: var(--ku-textfield-font-size-lg);
+  border-radius: var(--ku-textfield-border-radius-lg);
+}
+
+/* States */
+.ku-textfield-error .ku-textfield-input {
+  border-color: var(--ku-color-alert-3) !important;
+  background-color: var(--ku-color-alert-1);
+}
+
+.ku-textfield-error .ku-textfield-input:focus {
+  border-color: var(--ku-color-alert-3) !important;
+  box-shadow: 0 0 0 var(--ku-textfield-focus-ring-width) var(--ku-textfield-error-ring-color) !important;
+}
+
+.ku-textfield-disabled .ku-textfield-input {
+  opacity: var(--ku-textfield-disabled-opacity);
+  cursor: not-allowed;
+  background-color: var(--ku-color-background-surface-3) !important;
+  border-color: var(--ku-color-border-1) !important;
+  color: var(--ku-color-text-disabled);
+}
+
+/* Icons */
+.ku-textfield-start-icon,
+.ku-textfield-end-icon {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--ku-textfield-icon-size);
+  height: var(--ku-textfield-icon-size);
+  color: var(--ku-color-text-secondary);
+  pointer-events: none;
+}
+
+.ku-textfield-start-icon {
+  left: var(--ku-textfield-icon-spacing);
+}
+
+.ku-textfield-end-icon {
+  right: var(--ku-textfield-icon-spacing);
+}
+
+.ku-textfield-with-start-icon .ku-textfield-input {
+  padding-left: calc(var(--ku-textfield-icon-spacing) * 2 + var(--ku-textfield-icon-size));
+}
+
+.ku-textfield-with-end-icon .ku-textfield-input {
+  padding-right: calc(var(--ku-textfield-icon-spacing) * 2 + var(--ku-textfield-icon-size));
+}
+
+/* Affixes */
+.ku-textfield-prefix,
+.ku-textfield-suffix {
+  display: flex;
+  align-items: center;
+  color: var(--ku-color-text-secondary);
+  font-family: var(--ku-font-family-base);
+  font-size: var(--ku-textfield-font-size-md);
+  padding: 0 var(--ku-textfield-affix-padding-x);
+  pointer-events: none;
+}
+
+.ku-textfield-with-prefix .ku-textfield-input {
+  padding-left: calc(var(--ku-textfield-affix-padding-x) * 2 + 1ch);
+}
+
+.ku-textfield-with-suffix .ku-textfield-input {
+  padding-right: calc(var(--ku-textfield-affix-padding-x) * 2 + 1ch);
+}
+
+/* Helper text and error message */
+.ku-textfield-helper {
+  color: var(--ku-color-text-secondary);
+  font-family: var(--ku-font-family-base);
+  font-size: var(--ku-textfield-helper-font-size);
+  line-height: var(--ku-textfield-helper-line-height);
+  margin-top: var(--ku-textfield-helper-margin-top);
+}
+
+.ku-textfield-error-text {
+  color: var(--ku-color-alert-3);
+  font-family: var(--ku-font-family-base);
+  font-size: var(--ku-textfield-helper-font-size);
+  line-height: var(--ku-textfield-helper-line-height);
+  margin-top: var(--ku-textfield-error-margin-top);
+}
+
+/* Password toggle button */
+.ku-textfield-password-toggle {
+  position: absolute;
+  right: var(--ku-textfield-icon-spacing);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--ku-textfield-icon-size);
+  height: var(--ku-textfield-icon-size);
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: var(--ku-color-neutral-500);
+  transition: color var(--ku-textfield-transition-duration) var(--ku-textfield-transition-timing);
+  z-index: 2;
+  pointer-events: auto;
+}
+
+.ku-textfield-password-toggle:hover:not(:disabled) {
+  color: var(--ku-color-neutral-700);
+}
+
+.ku-textfield-password-toggle:focus {
+  outline: none;
+  color: var(--ku-color-primary-500);
+}
+
+.ku-textfield-disabled .ku-textfield-password-toggle {
+  cursor: not-allowed;
+  color: var(--ku-color-neutral-400);
+  opacity: var(--ku-textfield-disabled-opacity);
+}
+
+/* Action button */
+.ku-textfield-action {
+  position: absolute;
+  right: var(--ku-textfield-icon-spacing);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ku-textfield-with-action .ku-textfield-input {
+  padding-right: calc(var(--ku-textfield-icon-spacing) * 2 + var(--ku-textfield-icon-size));
+}
+
+/* Dark theme */
+[data-theme="dark"] .ku-textfield-input {
+  background-color: var(--ku-color-background-surface-2);
+  color: var(--ku-color-text-primary-dark);
+}
+
+[data-theme="dark"] .ku-textfield-label {
+  color: var(--ku-color-text-primary-dark);
+}
+
+[data-theme="dark"] .ku-textfield-helper {
+  color: var(--ku-color-text-secondary-dark);
+}
+
+[data-theme="dark"] .ku-textfield-error-text {
+  color: var(--ku-color-alert-3-dark);
+}
+
+[data-theme="dark"] .ku-textfield-password-toggle {
+  color: var(--ku-color-text-muted-dark);
+}
+
+[data-theme="dark"] .ku-textfield-password-toggle:hover:not(:disabled) {
+  color: var(--ku-color-text-primary-dark);
+}
+
+/* High contrast mode */
+@media (forced-colors: active) {
+  .ku-textfield-input {
+    border: var(--ku-textfield-border-width) solid ButtonBorder;
+    forced-color-adjust: none;
+  }
+  
+  .ku-textfield-input:focus {
+    outline: 2px solid ButtonText;
+    outline-offset: 2px;
+  }
+  
+  .ku-textfield-error .ku-textfield-input {
+    border: calc(var(--ku-textfield-border-width) * 2) solid Mark;
+  }
+
+  .ku-textfield-password-toggle {
+    color: ButtonText;
+  }
+  
+  .ku-textfield-password-toggle:hover:not(:disabled) {
+    color: Highlight;
+  }
+  
+  .ku-textfield-password-toggle:disabled {
+    color: GrayText;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .ku-textfield-input,
+  .ku-textfield-input::placeholder,
+  .ku-textfield-password-toggle {
+    transition: none;
+  }
+}
+
+/* Adjust padding when both password toggle and end icon are present */
+.ku-textfield-with-end-icon.ku-textfield-with-password-toggle .ku-textfield-input {
+  padding-right: calc(var(--ku-textfield-icon-spacing) * 3 + var(--ku-textfield-icon-size) * 2);
+}
+
+/* Position end icon when password toggle is present */
+.ku-textfield-with-password-toggle .ku-textfield-end-icon {
+  right: calc(var(--ku-textfield-icon-spacing) * 2 + var(--ku-textfield-icon-size));
+}
+
+/* Position action button when password toggle is present */
+.ku-textfield-with-password-toggle .ku-textfield-action {
+  right: calc(var(--ku-textfield-icon-spacing) * 2 + var(--ku-textfield-icon-size));
+} 
