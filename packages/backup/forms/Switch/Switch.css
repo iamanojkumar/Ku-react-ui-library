@@ -1,0 +1,256 @@
+@import '../../../styles/tokens.css';
+
+.ku-switch-wrapper {
+  display: inline-flex;
+  flex-direction: column;
+  gap: var(--ku-spacing-2);
+  min-width: 0;
+}
+
+.ku-switch-label-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ku-spacing-1);
+}
+
+.ku-switch-control {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+}
+
+.ku-switch {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  width: var(--ku-switch-width-md);
+  height: var(--ku-switch-height-md);
+  border: var(--ku-switch-border-width) solid var(--ku-switch-border-color-unchecked);
+  border-radius: var(--ku-switch-border-radius);
+  background-color: var(--ku-switch-bg-unchecked);
+  transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  padding: 2px;
+  box-sizing: border-box;
+}
+
+/* Size variants */
+.ku-switch-sm {
+  width: var(--ku-switch-width-sm);
+  height: var(--ku-switch-height-sm);
+}
+
+.ku-switch-lg {
+  width: var(--ku-switch-width-lg);
+  height: var(--ku-switch-height-lg);
+}
+
+/* Thumb base styles */
+.ku-switch-thumb {
+  position: absolute;
+  left: 2px;
+  width: calc(var(--ku-switch-height-md) - 4px);
+  height: calc(var(--ku-switch-height-md) - 4px);
+  background-color: var(--ku-switch-thumb-bg);
+  border-radius: 50%;
+  box-shadow: var(--ku-switch-thumb-shadow);
+  transition: transform 200ms cubic-bezier(0.4, 0, 0.2, 1),
+              background-color 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+/* Thumb sizes */
+.ku-switch-sm .ku-switch-thumb {
+  width: calc(var(--ku-switch-height-sm) - 4px);
+  height: calc(var(--ku-switch-height-sm) - 4px);
+}
+
+.ku-switch-lg .ku-switch-thumb {
+  width: calc(var(--ku-switch-height-lg) - 4px);
+  height: calc(var(--ku-switch-height-lg) - 4px);
+}
+
+/* Input styles */
+.ku-switch-input {
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  z-index: 1;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.ku-switch-input:disabled {
+  cursor: not-allowed;
+}
+
+/* Switch states */
+.ku-switch-input:checked + .ku-switch {
+  background-color: var(--ku-switch-bg-checked);
+  border-color: var(--ku-switch-border-color-checked);
+}
+
+.ku-switch-input:checked + .ku-switch .ku-switch-thumb {
+  transform: translateX(calc(var(--ku-switch-width-md) - var(--ku-switch-height-md)));
+}
+
+.ku-switch-sm .ku-switch-input:checked + .ku-switch .ku-switch-thumb {
+  transform: translateX(calc(var(--ku-switch-width-sm) - var(--ku-switch-height-sm)));
+}
+
+.ku-switch-lg .ku-switch-input:checked + .ku-switch .ku-switch-thumb {
+  transform: translateX(calc(var(--ku-switch-width-lg) - var(--ku-switch-height-lg)));
+}
+
+.ku-switch-input:not(:disabled):hover + .ku-switch {
+  border-color: var(--ku-switch-border-color-hover);
+}
+
+.ku-switch-input:not(:disabled):hover + .ku-switch .ku-switch-thumb {
+  transform: scale(1.05);
+}
+
+.ku-switch-input:checked:not(:disabled):hover + .ku-switch .ku-switch-thumb {
+  transform: translateX(calc(var(--ku-switch-width-md) - var(--ku-switch-height-md))) scale(1.05);
+}
+
+.ku-switch-input:focus-visible + .ku-switch {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--ku-color-background-surface-1),
+              0 0 0 4px var(--ku-switch-focus-ring-color);
+}
+
+.ku-switch-input:disabled + .ku-switch {
+  opacity: var(--ku-switch-disabled-opacity);
+  background-color: var(--ku-switch-bg-disabled);
+  border-color: var(--ku-switch-border-color-disabled);
+}
+
+/* Error state */
+.ku-switch-error .ku-switch {
+  border-color: var(--ku-color-error-500);
+}
+
+.ku-switch-error .ku-switch-input:focus-visible + .ku-switch {
+  box-shadow: 0 0 0 2px var(--ku-color-background-surface-1),
+              0 0 0 4px var(--ku-color-error-400);
+}
+
+.ku-switch-error-message {
+  color: var(--ku-color-error-500);
+  font-size: var(--ku-font-size-sm);
+  line-height: var(--ku-line-height-normal);
+  margin-top: var(--ku-spacing-1);
+}
+
+/* Loading state */
+.ku-switch-loading {
+  opacity: 0.7;
+  cursor: wait;
+}
+
+.ku-switch-loading-indicator {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 16px;
+  height: 16px;
+  margin: -8px 0 0 -8px;
+  border: 2px solid var(--ku-color-primary-100);
+  border-top-color: var(--ku-color-primary-500);
+  border-radius: 50%;
+  animation: ku-switch-loading 0.6s linear infinite;
+}
+
+@keyframes ku-switch-loading {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Label styles */
+.ku-switch-label {
+  font-family: var(--ku-font-family-base);
+  font-size: var(--ku-switch-label-font-size);
+  font-weight: var(--ku-switch-label-font-weight);
+  line-height: var(--ku-switch-label-line-height);
+  color: var(--ku-switch-label-color);
+  user-select: none;
+}
+
+.ku-switch-description {
+  font-size: var(--ku-font-size-sm);
+  color: var(--ku-color-text-secondary);
+  line-height: var(--ku-line-height-normal);
+}
+
+.ku-switch-disabled .ku-switch-label,
+.ku-switch-disabled .ku-switch-description {
+  color: var(--ku-switch-label-disabled-color);
+  opacity: var(--ku-switch-disabled-opacity);
+}
+
+/* Dark theme */
+[data-theme="dark"] .ku-switch {
+  background-color: var(--ku-color-background-surface-3);
+}
+
+[data-theme="dark"] .ku-switch-input:checked + .ku-switch {
+  background-color: var(--ku-color-primary-600);
+  border-color: var(--ku-color-primary-600);
+}
+
+[data-theme="dark"] .ku-switch-description {
+  color: var(--ku-color-text-secondary-dark);
+}
+
+/* High contrast mode */
+@media (forced-colors: active) {
+  .ku-switch {
+    border: var(--ku-switch-border-width) solid ButtonBorder;
+    forced-color-adjust: none;
+  }
+
+  .ku-switch-input:checked + .ku-switch {
+    background-color: Highlight;
+    border-color: Highlight;
+  }
+
+  .ku-switch-thumb {
+    background-color: ButtonFace;
+  }
+
+  .ku-switch-disabled {
+    opacity: 0.5;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .ku-switch,
+  .ku-switch-thumb,
+  .ku-switch-loading-indicator {
+    transition: none;
+    animation: none;
+  }
+}
+
+/* Visually hidden label */
+.ku-switch-label-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+} 

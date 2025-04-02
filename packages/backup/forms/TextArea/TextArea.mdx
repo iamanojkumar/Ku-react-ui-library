@@ -1,0 +1,154 @@
+import { Meta, Story, Canvas, ArgTypes } from '@storybook/blocks';
+import * as TextAreaStories from './TextArea.stories';
+
+<Meta of={TextAreaStories} />
+
+# TextArea
+
+A versatile textarea component for multiline text input with support for various states, sizes, and visual styles.
+
+## Features
+
+- Three visual variants: outlined, filled, and subtle
+- Three sizes: small, medium, and large
+- Support for labels, helper text, and error messages
+- Consistent typography using design tokens
+- Fully accessible with ARIA support
+- Dark theme and high contrast mode support
+- Responsive design with fluid sizing
+
+## Interactive Demo
+
+Try out different props combinations in the playground:
+
+<Canvas of={TextAreaStories.Playground} />
+
+## Props
+
+<ArgTypes of={TextAreaStories} />
+
+## Visual Variants
+
+The TextArea component supports three visual variants to match different design contexts:
+
+<Canvas of={TextAreaStories.Variants} />
+
+## Sizes
+
+Three predefined sizes are available to accommodate different use cases:
+
+<Canvas of={TextAreaStories.Sizes} />
+
+## States
+
+The TextArea component handles various states with appropriate visual feedback:
+
+<Canvas of={TextAreaStories.States} />
+
+## Responsive Design
+
+The TextArea component is built to be responsive and adaptable:
+
+<Canvas of={TextAreaStories.Responsive} />
+
+## Form Validation Example
+
+Example of form validation with dynamic error messages:
+
+<Canvas of={TextAreaStories.WithFormValidation} />
+
+## Usage Guidelines
+
+### Installation
+
+```tsx
+import { TextArea } from '@ku-design-system/react';
+
+function MyForm() {
+  return (
+    <TextArea
+      label="Message"
+      placeholder="Type your message here..."
+      helperText="Maximum 500 characters"
+      variant="outlined"
+      size="md"
+    />
+  );
+}
+```
+
+### Variant Selection
+- **Outlined**: Default variant, best for forms where input fields need clear boundaries
+- **Filled**: Great for forms with multiple inputs, provides better visual hierarchy
+- **Subtle**: Perfect for in-place editing or when you want minimal visual interference
+
+### Size Guidelines
+- **Small (sm)**: Use for compact layouts or when vertical space is limited
+- **Medium (md)**: Default size, suitable for most use cases
+- **Large (lg)**: Use when users need to enter longer text or when you want to emphasize the input
+
+### State Behaviors
+- **Default**: Standard interactive state
+- **Hover**: Subtle background change and border enhancement
+- **Focus**: Clear visual indication with brand color and focus ring
+- **Disabled**: Reduced opacity and non-interactive
+- **Error**: Red border and error message for validation feedback
+
+### Best Practices
+
+1. **Labels**
+   - Always provide a clear, descriptive label
+   - Use placeholder text for additional context, not as a replacement for labels
+
+2. **Validation**
+   - Show error messages immediately after user interaction
+   - Provide clear guidance on how to correct errors
+   - Use helper text to prevent errors before they occur
+
+3. **Sizing**
+   - Choose a size that matches your form's visual hierarchy
+   - Consider the expected length of user input when selecting a size
+
+4. **Visual Style**
+   - Use consistent variants within the same form
+   - Match the variant to your overall design language
+   - Consider the context where the textarea will be used
+
+### Accessibility
+
+The TextArea component follows WCAG guidelines and best practices:
+
+- Proper labeling with `label` element or `aria-label`
+- Error messages linked via `aria-describedby`
+- Support for high contrast mode
+- Keyboard navigation support
+- Clear focus indicators
+- Reduced motion support
+
+### Design Tokens
+
+The component uses the following design tokens:
+
+```css
+/* Base */
+--ku-textarea-min-width: 200px
+--ku-textarea-radius: var(--ku-radius-component-md)
+--ku-textarea-gap: var(--ku-spacing-component-xs)
+--ku-textarea-border-width: var(--ku-border-width-thin)
+
+/* Heights */
+--ku-textarea-min-height-sm: 80px
+--ku-textarea-min-height-md: 120px
+--ku-textarea-min-height-lg: 160px
+
+/* Typography */
+--ku-textarea-font-size-sm: var(--ku-font-size-sm)
+--ku-textarea-font-size-md: var(--ku-font-size-base)
+--ku-textarea-font-size-lg: var(--ku-font-size-lg)
+```
+
+### Related Components
+
+- **Input**: For single-line text input
+- **Select**: For choosing from a list of options
+- **Form**: Container component for form elements 
