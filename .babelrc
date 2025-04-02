@@ -1,0 +1,16 @@
+{
+  "presets": [
+    "@babel/preset-env",
+    ["@babel/preset-react", { 
+      "jsxImportSource": "@emotion/react",
+      "runtime": "automatic"
+    }],
+    "@babel/preset-typescript"
+  ],
+  "plugins": [
+    ["@emotion/babel-plugin", {
+      "sourceMap": true,
+      "autoLabel": "dev-only"
+    }]
+  ]
+} 

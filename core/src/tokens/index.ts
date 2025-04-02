@@ -5,6 +5,9 @@ export * from './effects';
 export * from './semantic';
 export * from './breakpoints';
 export * from './theme-variants';
+export * from './animations';
+export * from './elevation';
+export * from './radius';
 
 import { lightColors, darkColors } from './colors';
 import { typography } from './typography';
@@ -33,4 +36,21 @@ export type TypographyToken = keyof typeof typography;
 export type SpacingToken = keyof typeof spacing;
 export type EffectToken = keyof typeof effects;
 export type SemanticToken = keyof typeof semanticTokens;
-export type BreakpointToken = keyof typeof breakpoints; 
+export type BreakpointToken = keyof typeof breakpoints;
+
+// Re-export commonly used types
+export type {
+  ColorToken,
+  TypographyToken,
+  SpacingToken,
+  BreakpointToken,
+  EffectToken,
+  SemanticToken,
+  ThemeVariant,
+  AnimationToken,
+  AnimationPreset,
+  ElevationToken,
+  ElevationPreset,
+  RadiusToken,
+  RadiusPreset
+} from './types'; 

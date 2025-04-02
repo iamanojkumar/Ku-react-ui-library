@@ -1,0 +1,83 @@
+# Ku React UI Library
+
+A modern, accessible, and customizable React component library built with TypeScript and Vite.
+
+## Component Categories
+
+### Layout Components
+- **Container**: Responsive container with customizable max-width and padding
+- **Grid**: Flexible grid system for layouts
+- **Stack**: Vertical or horizontal stacking of elements
+- **Divider**: Visual separator between elements
+
+### Form Components
+- **Button**: Multi-variant button component
+- **TextField**: Text input component
+- **TextArea**: Multi-line text input
+- **Select**: Dropdown selection component
+- **Checkbox**: Checkbox input component
+- **Radio**: Radio button component
+- **Switch**: Toggle switch component
+
+### Feedback Components
+- **Alert**: Contextual feedback messages
+- **Toast**: Temporary notifications
+- **ProgressBar**: Progress indicators
+- **LoadingIndicator**: Loading states
+- **Skeleton**: Loading placeholders
+
+### Navigation Components
+- **Menu**: Navigation menu component
+- **Tabs**: Tab navigation component
+- **Breadcrumb**: Breadcrumb navigation
+- **Pagination**: Page navigation
+
+### Data Display Components
+- **Card**: Content container component
+- **List**: List container component
+- **ListItem**: List item component
+- **Avatar**: User avatar component
+- **Badge**: Status indicator component
+- **Image**: Image component with loading states
+
+### Overlay Components
+- **Modal**: Dialog component
+- **Tooltip**: Contextual tooltips
+- **Dropdown**: Dropdown menu component
+
+### Primitive Components
+- **IconButton**: Button with icon
+- **Link**: Navigation link component
+- **Accordion**: Expandable content
+- **Carousel**: Image carousel
+- **Calendar**: Date picker component
+- **ThemeProvider**: Theme context provider
+
+## Installation
+
+```bash
+npm install @ku-design-system/react
+```
+
+## Usage
+
+```jsx
+import { Button, ThemeProvider } from '@ku-design-system/react';
+import '@ku-design-system/react/dist/style.css';
+
+function App() {
+  return (
+    <ThemeProvider>
+      <Button variant="primary">Click me</Button>
+    </ThemeProvider>
+  );
+}
+```
+
+## Design Principles
+
+1. **Accessibility First**: All components follow WAI-ARIA guidelines
+2. **Customizable**: Extensive theming support
+3. **Type-Safe**: Built with TypeScript
+4. **Performance**: Optimized for production
+5. **Developer Experience**: Comprehensive documentation and examples 

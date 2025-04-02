@@ -1,0 +1,63 @@
+.ku-split-button {
+  position: relative;
+  display: inline-flex;
+  align-items: stretch;
+}
+
+/* Main button styles */
+.ku-split-button__main {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-right-width: 0;
+}
+
+/* Trigger button styles */
+.ku-split-button__trigger {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  padding-left: var(--ku-button-padding-x-sm);
+  padding-right: var(--ku-button-padding-x-sm);
+  min-width: unset;
+}
+
+/* Menu positioning */
+.ku-split-button__menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: var(--ku-spacing-1);
+  z-index: var(--ku-z-index-dropdown);
+}
+
+/* Size variants */
+.ku-split-button--sm .ku-split-button__trigger {
+  padding-left: calc(var(--ku-button-padding-x-sm) * 0.75);
+  padding-right: calc(var(--ku-button-padding-x-sm) * 0.75);
+}
+
+.ku-split-button--lg .ku-split-button__trigger {
+  padding-left: calc(var(--ku-button-padding-x-sm) * 1.25);
+  padding-right: calc(var(--ku-button-padding-x-sm) * 1.25);
+}
+
+/* Full width support */
+.ku-split-button--full-width {
+  display: flex;
+  width: 100%;
+}
+
+.ku-split-button--full-width .ku-split-button__main {
+  flex: 1;
+}
+
+/* Focus styles */
+.ku-split-button:focus-within {
+  outline: none;
+}
+
+.ku-split-button__main:focus-visible,
+.ku-split-button__trigger:focus-visible {
+  outline: var(--ku-button-focus-ring-width) var(--ku-button-focus-ring-style) var(--ku-button-focus-ring-color);
+  outline-offset: var(--ku-button-focus-ring-offset);
+  z-index: 1;
+} 

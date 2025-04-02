@@ -27,7 +27,43 @@
   --ku-spacing-56: 14rem;   /* 224px */
   --ku-spacing-64: 16rem;   /* 256px */
 
+  /* Component Spacing */
+  --ku-spacing-component-2xs: var(--ku-spacing-1);
+  --ku-spacing-component-xs: var(--ku-spacing-2);
+  --ku-spacing-component-sm: var(--ku-spacing-3);
+  --ku-spacing-component-md: var(--ku-spacing-4);
+  --ku-spacing-component-lg: var(--ku-spacing-5);
+  --ku-spacing-component-xl: var(--ku-spacing-6);
+
+  /* Border Radius Scale */
+  --ku-border-radius-none: 0;
+  --ku-border-radius-small: 0.125rem;    /* 2px */
+  --ku-border-radius-base: 0.25rem;      /* 4px */
+  --ku-border-radius-medium: 0.375rem;    /* 6px */
+  --ku-border-radius-large: 0.5rem;      /* 8px */
+  --ku-border-radius-xlarge: 0.75rem;    /* 12px */
+
+  /* Component Border Radius */
+  --ku-radius-component-none: var(--ku-border-radius-none);
+  --ku-radius-component-sm: var(--ku-border-radius-small);
+  --ku-radius-component-md: var(--ku-border-radius-base);
+  --ku-radius-component-lg: var(--ku-border-radius-large);
+  --ku-radius-component-xl: var(--ku-border-radius-xlarge);
+  --ku-radius-component-full: 9999px;
+
+  /* Border System */
+  --ku-border-style-solid: solid;
+  --ku-border-style-dashed: dashed;
+  --ku-border-style-dotted: dotted;
+  --ku-border-style-none: none;
+
+  /* Border Widths */
+  --ku-border-width-thin: 1px;
+  --ku-border-width-medium: 2px;
+  --ku-border-width-thick: 4px;
+
   /* Brand Colors */
+
   --ku-color-brand-primary: #326F32;
 
   --ku-color-brand-primary-shade-1: #dbeddb;
@@ -40,6 +76,10 @@
   --ku-color-brand-primary-shade-8: #265326;
   --ku-color-brand-primary-shade-9: #193719;
   --ku-color-brand-primary-shade-10: #0f210f;
+=======
+  --ku-color-brand-primary: #007323;
+
+
   /* Background Colors */
   --ku-color-background-surface-1: #fbfdff;
   --ku-color-background-surface-2: #fafdff;
@@ -139,9 +179,25 @@
   --ku-color-red-1100: #d00900;
   --ku-color-red-1200: #710002;
 
+  /* Primary Colors */
+  --ku-color-primary-100: #dbeddb;
+  --ku-color-primary-200: #c3e1c3;
+  --ku-color-primary-300: #a5d3a5;
+  --ku-color-primary-400: #87c487;
+  --ku-color-primary-500: #69b569;
+  --ku-color-primary-600: #3f8a3f;
+  --ku-color-primary-700: #326f32;
+  --ku-color-primary-800: #265326;
+  --ku-color-primary-900: #193719;
+  --ku-color-primary-1000: #0f210f;
+
   /* Functional Color Tokens */
   --ku-color-primary-enabled: var(--ku-color-brand-primary);
+
   --ku-color-primary-hover: var(--ku-color-brand-primary-shade-8);
+=======
+  --ku-color-primary-hover: var(--ku-color-green-1100);
+
   --ku-color-primary-selected: var(--ku-color-blue-1200);
   --ku-color-primary-focus-visible: var(--ku-color-brand-primary);
   --ku-color-primary-focus-ring: rgba(0, 102, 255, 0.25);
@@ -249,13 +305,6 @@
   --ku-focus-ring-offset-medium: 2px;
   --ku-focus-ring-offset-large: 3px;
 
-  /* Border System */
-  --ku-border-style-solid: solid;
-  --ku-border-style-dashed: dashed;
-  --ku-border-width-thin: 1px;
-  --ku-border-width-medium: 2px;
-  --ku-border-width-thick: 4px;
-
   /* Z-index System */
   --ku-z-index-dropdown: 1000;
   --ku-z-index-sticky: 1020;
@@ -274,12 +323,345 @@
   --ku-breakpoint-tablet: 768px;
   --ku-breakpoint-desktop: 1024px;
   --ku-breakpoint-wide: 1440px;
+
+  /* Component Tokens */
+  /* Button */
+  --ku-button-gap: var(--ku-spacing-2);
+  --ku-button-padding-x-sm: var(--ku-spacing-3);
+  --ku-button-padding-x-md: var(--ku-spacing-4);
+  --ku-button-padding-x-lg: var(--ku-spacing-6);
+  --ku-button-padding-y-sm: var(--ku-spacing-1);
+  --ku-button-padding-y-md: var(--ku-spacing-2);
+  --ku-button-padding-y-lg: var(--ku-spacing-3);
+  --ku-button-min-width: 2.5rem;
+  --ku-button-height-sm: 2rem;
+  --ku-button-height-md: 2.5rem;
+  --ku-button-height-lg: 3rem;
+  --ku-button-radius: 0.375rem;
+  --ku-button-font-size-sm: var(--ku-font-size-sm);
+  --ku-button-font-size-md: var(--ku-font-size-base);
+  --ku-button-font-size-lg: var(--ku-font-size-lg);
+  --ku-button-font-weight: var(--ku-font-weight-medium);
+  --ku-button-line-height: var(--ku-line-height-normal);
+  --ku-button-transition: all var(--ku-duration-normal) var(--ku-ease-out);
+
+  /* Button Variants */
+  --ku-button-primary-bg: var(--ku-color-primary-600);
+  --ku-button-primary-color: var(--ku-color-neutral-white);
+  --ku-button-primary-hover-bg: var(--ku-color-primary-800);
+  --ku-button-primary-active-bg: var(--ku-color-primary-900);
+
+  --ku-button-secondary-bg: var(--ku-color-primary-100);
+  --ku-button-secondary-color: var(--ku-color-primary-800);
+  --ku-button-secondary-hover-bg: var(--ku-color-primary-200);
+  --ku-button-secondary-active-bg: var(--ku-color-primary-300);
+
+  --ku-button-outline-bg: transparent;
+  --ku-button-outline-color: var(--ku-color-primary-600);
+  --ku-button-outline-border: var(--ku-color-primary-600);
+  --ku-button-outline-hover-bg: var(--ku-color-primary-100);
+  --ku-button-outline-active-bg: var(--ku-color-primary-200);
+
+  --ku-button-outline-text: var(--ku-color-primary-600);
+
+  --ku-button-ghost-bg: transparent;
+  --ku-button-ghost-color: var(--ku-color-primary-600);
+  --ku-button-ghost-hover-bg: var(--ku-color-primary-100);
+  --ku-button-ghost-active-bg: var(--ku-color-primary-200);
+  --ku-button-ghost-text: var(--ku-color-primary-600);
+
+  /* Button States */
+  --ku-button-disabled-opacity: 0.6;
+  --ku-button-disabled-cursor: not-allowed;
+  --ku-button-loading-spinner-size: 1.25rem;
+  --ku-button-loading-spinner-width: 4px;
+
+  /* Button Focus */
+  --ku-button-focus-ring-width: var(--ku-focus-ring-width-medium);
+  --ku-button-focus-ring-style: var(--ku-focus-ring-style);
+  --ku-button-focus-ring-offset: var(--ku-focus-ring-offset-medium);
+  --ku-button-focus-ring-color: var(--ku-color-interactive-focus);
+
+  /* Button Tokens */
+  /* Base Sizes */
+  --ku-button-height-sm: 2rem;
+  --ku-button-height-md: 2.5rem;
+  --ku-button-height-lg: 3rem;
+  --ku-button-min-width: 2.5rem;
+  
+  /* Button Padding */
+  --ku-button-padding-x-sm: 0.75rem;
+  --ku-button-padding-y-sm: 0.25rem;
+  --ku-button-padding-x-md: 1rem;
+  --ku-button-padding-y-md: 0.375rem;
+  --ku-button-padding-x-lg: 1.25rem;
+  --ku-button-padding-y-lg: 0.5rem;
+
+  /* Button Typography */
+  --ku-button-font-family: var(--ku-font-family-base);
+  --ku-button-font-size-sm: var(--ku-font-size-sm);
+  --ku-button-font-size-md: var(--ku-font-size-base);
+  --ku-button-font-size-lg: var(--ku-font-size-lg);
+  --ku-button-font-weight: var(--ku-font-weight-medium);
+  --ku-button-line-height: var(--ku-line-height-normal);
+  --ku-button-letter-spacing: var(--ku-letter-spacing-wide);
+
+  /* Button Layout */
+  --ku-button-gap: var(--ku-spacing-component-xs);
+  --ku-button-radius: var(--ku-radius-component-md);
+  --ku-button-border-width: var(--ku-border-width-thin);
+  --ku-button-border-style: var(--ku-border-style-solid);
+
+  /* Button Colors - Primary */
+  --ku-button-primary-bg: var(--ku-color-brand-primary);
+  --ku-button-primary-text: var(--ku-color-neutral-white);
+  --ku-button-primary-border: var(--ku-color-brand-primary);
+  --ku-button-primary-hover-bg: var(--ku-color-primary-800);
+  --ku-button-primary-hover-border: var(--ku-color-primary-800);
+  --ku-button-primary-active-bg: var(--ku-color-primary-900);
+  --ku-button-primary-active-border: var(--ku-color-primary-900);
+
+  /* Button Colors - Secondary */
+  --ku-button-secondary-bg: var(--ku-color-gray-300);
+  --ku-button-secondary-text: var(--ku-color-gray-1200);
+  --ku-button-secondary-border: var(--ku-color-gray-300);
+  --ku-button-secondary-hover-bg: var(--ku-color-gray-400);
+  --ku-button-secondary-hover-border: var(--ku-color-gray-400);
+  --ku-button-secondary-active-bg: var(--ku-color-gray-500);
+  --ku-button-secondary-active-border: var(--ku-color-gray-500);
+
+  /* Button Colors - Outline */
+  --ku-button-outline-bg: transparent;
+  --ku-button-outline-text: var(--ku-color-brand-primary);
+  --ku-button-outline-border: var(--ku-color-brand-primary);
+  --ku-button-outline-hover-bg: rgba(0, 115, 35, 0.04);
+  --ku-button-outline-hover-border: var(--ku-color-brand-primary);
+  --ku-button-outline-active-bg: rgba(0, 115, 35, 0.1);
+  --ku-button-outline-active-border: var(--ku-color-brand-primary);
+
+  /* Button Colors - Ghost */
+  --ku-button-ghost-bg: transparent;
+  --ku-button-ghost-text: var(--ku-color-brand-primary);
+  --ku-button-ghost-border: transparent;
+  --ku-button-ghost-hover-bg: rgba(0, 115, 35, 0.04);
+  --ku-button-ghost-hover-border: transparent;
+  --ku-button-ghost-active-bg: rgba(0, 115, 35, 0.1);
+  --ku-button-ghost-active-border: transparent;
+
+  /* Button States */
+  --ku-button-disabled-opacity: 0.5;
+  --ku-button-disabled-cursor: not-allowed;
+
+  /* Button Focus */
+  --ku-button-focus-ring-width: var(--ku-focus-ring-width-medium);
+  --ku-button-focus-ring-style: var(--ku-focus-ring-style);
+  --ku-button-focus-ring-offset: var(--ku-focus-ring-offset-medium);
+  --ku-button-focus-ring-color: var(--ku-color-brand-primary);
+
+  /* Button Loading */
+  --ku-button-loading-spinner-size: 1.25rem;
+  --ku-button-loading-spinner-width: 0.25rem;
+  --ku-button-loading-opacity: 0.7;
+  --ku-button-loading-animation: ku-spin 1s linear infinite;
+
+  /* Button Icon */
+  --ku-button-icon-size: 1.25rem;
+  --ku-button-icon-gap: var(--ku-spacing-component-xs);
+
+  /* Button Animation */
+  --ku-button-transition: all var(--ku-duration-normal) var(--ku-ease-out);
+  --ku-button-transform-active: scale(0.98);
+  --ku-button-transform-hover: scale(1.02);
+
+  /* Checkbox Tokens */
+  /* Base Sizes */
+  --ku-checkbox-size: 1.25rem;
+  --ku-checkbox-border-width: var(--ku-border-width-thin);
+  --ku-checkbox-border-radius: var(--ku-radius-component-sm);
+  --ku-checkbox-gap: var(--ku-spacing-component-sm);
+  --ku-checkbox-group-gap: var(--ku-spacing-component-md);
+  
+  /* Checkbox Colors */
+  --ku-checkbox-bg: var(--ku-color-background-surface-4);
+  --ku-checkbox-border: var(--ku-color-border-subtle);
+  --ku-checkbox-hover-bg: var(--ku-color-primary-700);
+  --ku-checkbox-hover-border: var(--ku-color-brand-primary);
+  --ku-checkbox-checked-bg: var(--ku-color-brand-primary);
+  --ku-checkbox-checked-border: var(--ku-color-brand-primary);
+  --ku-checkbox-disabled-bg: var(--ku-color-background-surface-2);
+  --ku-checkbox-disabled-border: var(--ku-color-border-subtle);
+  --ku-checkbox-icon-color: var(--ku-color-neutral-white);
+  --ku-checkbox-indeterminate-bg: var(--ku-color-brand-primary);
+  --ku-checkbox-indeterminate-border: var(--ku-color-brand-primary);
+  --ku-checkbox-indeterminate-icon-color: var(--ku-color-neutral-white);
+  --ku-checkbox-group-selected-bg: var(--ku-color-brand-primary);
+  --ku-checkbox-group-selected-border: var(--ku-color-brand-primary);
+  --ku-checkbox-group-selected-icon-color: var(--ku-color-neutral-white);
+
+  /* Checkbox Error Colors */
+  --ku-checkbox-error-bg: var(--ku-color-alert-subtle-background);
+  --ku-checkbox-error-border: var(--ku-color-alert-enabled);
+  --ku-checkbox-error-hover-bg: var(--ku-color-alert-hover);
+  --ku-checkbox-error-hover-border: var(--ku-color-alert-hover);
+  --ku-checkbox-error-checked-bg: var(--ku-color-alert-enabled);
+  --ku-checkbox-error-checked-border: var(--ku-color-alert-enabled);
+  --ku-checkbox-error-focus-ring: var(--ku-color-alert-enabled);
+  
+  /* Checkbox Typography */
+  --ku-checkbox-label-font-size: var(--ku-font-size-sm);
+  --ku-checkbox-label-line-height: var(--ku-line-height-sm);
+  --ku-checkbox-label-color: var(--ku-color-text-primary);
+  --ku-checkbox-label-disabled-color: var(--ku-color-text-tertiary);
+  --ku-checkbox-message-font-size: var(--ku-font-size-xs);
+  --ku-checkbox-message-line-height: var(--ku-line-height-xs);
+  --ku-checkbox-message-color: var(--ku-color-text-subtle);
+  --ku-checkbox-error-color: var(--ku-color-alert-enabled);
+
+  /* Checkbox Group Typography */
+  --ku-checkbox-group-label-font-size: var(--ku-font-size-sm);
+  --ku-checkbox-group-label-font-weight: var(--ku-font-weight-medium);
+  --ku-checkbox-group-label-color: var(--ku-color-text-primary);
+  --ku-checkbox-group-label-disabled-color: var(--ku-color-text-tertiary);
+  --ku-checkbox-group-message-font-size: var(--ku-font-size-xs);
+  --ku-checkbox-group-message-line-height: var(--ku-line-height-xs);
+  --ku-checkbox-group-message-color: var(--ku-color-text-subtle);
+  --ku-checkbox-group-error-color: var(--ku-color-alert-enabled);
+
+  /* Checkbox Animation */
+  --ku-checkbox-transition: all var(--ku-duration-normal) var(--ku-ease-out);
+  --ku-checkbox-icon-transition: transform var(--ku-duration-normal) var(--ku-ease-out),
+                                opacity var(--ku-duration-normal) var(--ku-ease-out),
+                                color var(--ku-duration-normal) var(--ku-ease-out);
+
+  /* Checkbox Focus */
+  --ku-checkbox-focus-ring-width: var(--ku-focus-ring-width-medium);
+  --ku-checkbox-focus-ring-style: var(--ku-focus-ring-style);
+  --ku-checkbox-focus-ring-offset: var(--ku-focus-ring-offset-medium);
+  --ku-checkbox-focus-ring-color: var(--ku-color-interactive-focus);
+
+  /* Checkbox Layout */
+  --ku-checkbox-container-gap: var(--ku-spacing-component-sm);
+  --ku-checkbox-group-options-gap: var(--ku-spacing-component-sm);
+  --ku-checkbox-group-message-margin: var(--ku-spacing-component-xs);
+
+  /* Checkbox Sizes */
+  --ku-checkbox-size-sm: 1rem;
+  --ku-checkbox-size-md: 1.25rem;
+  --ku-checkbox-size-lg: 1.5rem;
+  
+  --ku-checkbox-label-font-size-sm: var(--ku-font-size-xs);
+  --ku-checkbox-label-font-size-md: var(--ku-font-size-sm);
+  --ku-checkbox-label-font-size-lg: var(--ku-font-size-base);
+  
+  --ku-checkbox-gap-sm: var(--ku-spacing-component-xs);
+  --ku-checkbox-gap-md: var(--ku-spacing-component-sm);
+  --ku-checkbox-gap-lg: var(--ku-spacing-component-md);
+
+  /* Checkbox Loading */
+  --ku-checkbox-loading-opacity: 0.7;
+  --ku-checkbox-loading-bg: var(--ku-color-background-surface-2);
+  --ku-checkbox-loading-border: var(--ku-color-border-subtle);
+  --ku-checkbox-loading-color: var(--ku-color-text-tertiary);
+  --ku-checkbox-loading-animation: ku-spin 1s linear infinite;
+
+  /* Checkbox Interaction */
+  --ku-checkbox-active-scale: 0.95;
+  --ku-checkbox-hover-scale: 1.02;
+
+  /* Checkbox Icon */
+  --ku-checkbox-icon-size: 1rem;
+  --ku-checkbox-icon-stroke-width: 2.5;
+  --ku-checkbox-icon-position: -50%;
+  --ku-checkbox-icon-scale: 1;
+  --ku-checkbox-icon-opacity: 1;
+  --ku-checkbox-icon-unchecked-scale: 0.8;
+  --ku-checkbox-icon-unchecked-opacity: 0;
+
+  /* Checkbox Group Tokens */
+  --ku-checkbox-group-gap: var(--ku-spacing-component-md);
+  --ku-checkbox-group-options-gap: var(--ku-spacing-component-sm);
+  --ku-checkbox-group-message-margin: var(--ku-spacing-component-xs);
+
+  /* Checkbox Group Label */
+  --ku-checkbox-group-label-font-size: var(--ku-font-size-base);
+  --ku-checkbox-group-label-font-weight: var(--ku-font-weight-medium);
+  --ku-checkbox-group-label-color: var(--ku-color-text-primary);
+  --ku-checkbox-group-label-disabled-color: var(--ku-color-text-disabled);
+
+  /* Checkbox Group Message */
+  --ku-checkbox-group-message-font-size: var(--ku-font-size-sm);
+  --ku-checkbox-group-message-line-height: var(--ku-line-height-sm);
+  --ku-checkbox-group-message-color: var(--ku-color-text-tertiary);
+
+  /* Checkbox Error States */
+  --ku-checkbox-error-border: var(--ku-color-alert-enabled);
+  --ku-checkbox-error-bg: var(--ku-color-alert-subtle-background);
+  --ku-checkbox-error-checked-bg: var(--ku-color-alert-enabled);
+  --ku-checkbox-error-checked-border: var(--ku-color-alert-enabled);
+  --ku-checkbox-error-hover-bg: var(--ku-color-alert-hover);
+  --ku-checkbox-error-hover-border: var(--ku-color-alert-hover);
+  --ku-checkbox-error-focus-ring: var(--ku-color-alert-enabled);
+  --ku-checkbox-error-color: var(--ku-color-alert-enabled);
+
+  /* Checkbox Focus Ring */
+  --ku-checkbox-focus-ring-width: var(--ku-focus-ring-width-medium);
+  --ku-checkbox-focus-ring-style: var(--ku-focus-ring-style);
+  --ku-checkbox-focus-ring-offset: var(--ku-focus-ring-offset-medium);
+
+  /* Checkbox Disabled States */
+  --ku-checkbox-disabled-opacity: 0.5;
+  --ku-checkbox-disabled-bg: var(--ku-color-background-surface-disabled);
+  --ku-checkbox-disabled-border: var(--ku-color-border-disabled);
+  --ku-checkbox-label-disabled-color: var(--ku-color-text-disabled);
+
+  /* Button Badge */
+  --ku-button-badge-size: 1.25rem;
+  --ku-button-badge-font-size: var(--ku-font-size-xs);
+  --ku-button-badge-font-weight: var(--ku-font-weight-medium);
+  --ku-button-badge-bg: var(--ku-color-alert-enabled);
+  --ku-button-badge-color: var(--ku-color-neutral-white);
+  --ku-button-badge-border-radius: var(--ku-radius-component-full);
+  --ku-button-badge-padding: var(--ku-spacing-component-2xs) var(--ku-spacing-component-xs);
+  --ku-button-badge-offset: -0.25rem;
+  --ku-button-badge-border: 2px solid var(--ku-color-neutral-white);
+
+  /* Button Counter */
+  --ku-button-counter-font-size: var(--ku-font-size-xs);
+  --ku-button-counter-font-weight: var(--ku-font-weight-medium);
+  --ku-button-counter-bg: rgba(0, 0, 0, 0.08);
+  --ku-button-counter-color: inherit;
+  --ku-button-counter-border-radius: var(--ku-radius-component-full);
+  --ku-button-counter-padding: var(--ku-spacing-component-2xs) var(--ku-spacing-component-xs);
+  --ku-button-counter-min-width: 1rem;
+
+  /* Button Tooltip */
+  --ku-button-tooltip-bg: var(--ku-color-gray-1200);
+  --ku-button-tooltip-color: var(--ku-color-neutral-white);
+  --ku-button-tooltip-font-size: var(--ku-font-size-xs);
+  --ku-button-tooltip-font-weight: var(--ku-font-weight-normal);
+  --ku-button-tooltip-padding: var(--ku-spacing-component-xs) var(--ku-spacing-component-sm);
+  --ku-button-tooltip-border-radius: var(--ku-radius-component-sm);
+  --ku-button-tooltip-max-width: 20rem;
+  --ku-button-tooltip-z-index: var(--ku-z-index-tooltip);
+  --ku-button-tooltip-arrow-size: 0.375rem;
+  --ku-button-tooltip-offset: 0.5rem;
+
+  /* Button Group */
+  --ku-button-group-gap: calc(var(--ku-button-border-width) * -1);
+  --ku-button-group-spacing: var(--ku-spacing-component-xs);
+  --ku-button-group-border-radius: var(--ku-radius-component-md);
+  --ku-button-group-selected-bg: var(--ku-color-primary-600);
+  --ku-button-group-selected-color: var(--ku-color-neutral-white);
+  --ku-button-group-selected-border: var(--ku-color-primary-600);
+  --ku-button-group-hover-bg: var(--ku-color-primary-100);
+  --ku-button-group-hover-border: var(--ku-color-primary-600);
+  --ku-button-group-focus-ring-color: var(--ku-color-primary-600);
 }
 
 /* Dark Theme */
 [data-theme="dark"] {
   /* Brand Colors */
-  --ku-color-brand-primary: #3385ff;
+  --ku-color-brand-primary: #4BA64B;
 
   /* Background Colors */
   --ku-color-background-surface-1: #1a1a1a;
@@ -404,6 +786,53 @@
   --ku-overlay-background: rgba(0, 0, 0, 0.7);
   --ku-overlay-background-light: rgba(0, 0, 0, 0.4);
   --ku-overlay-background-heavy: rgba(0, 0, 0, 0.9);
+
+  /* Button Dark Theme Overrides */
+  --ku-button-secondary-bg: var(--ku-color-background-surface-3);
+  --ku-button-secondary-hover-bg: var(--ku-color-background-surface-4);
+  --ku-button-secondary-active-bg: var(--ku-color-neutral-700);
+
+  --ku-button-outline-hover-bg: var(--ku-color-green-900);
+  --ku-button-outline-active-bg: var(--ku-color-green-800);
+
+  --ku-button-ghost-hover-bg: var(--ku-color-neutral-800);
+  --ku-button-ghost-active-bg: var(--ku-color-neutral-700);
+
+  /* Button Dark Theme Colors */
+  --ku-button-primary-bg: var(--ku-color-brand-primary);
+  --ku-button-primary-text: #ffffff;
+  --ku-button-primary-hover-bg: var(--ku-color-primary-800);
+  --ku-button-primary-active-bg: var(--ku-color-primary-900);
+
+  --ku-button-secondary-bg: var(--ku-color-gray-700);
+  --ku-button-secondary-text: var(--ku-color-gray-100);
+  --ku-button-secondary-hover-bg: var(--ku-color-gray-800);
+  --ku-button-secondary-active-bg: var(--ku-color-gray-900);
+
+  --ku-button-outline-text: var(--ku-color-brand-primary);
+  --ku-button-outline-border: var(--ku-color-brand-primary);
+  --ku-button-outline-hover-bg: rgba(75, 166, 75, 0.12);
+  --ku-button-outline-active-bg: rgba(75, 166, 75, 0.2);
+
+  --ku-button-ghost-text: var(--ku-color-brand-primary);
+  --ku-button-ghost-hover-bg: rgba(75, 166, 75, 0.12);
+  --ku-button-ghost-active-bg: rgba(75, 166, 75, 0.2);
+
+  /* Button Badge Dark Theme */
+  --ku-button-badge-bg: var(--ku-color-alert-enabled);
+  --ku-button-badge-color: var(--ku-color-neutral-white);
+  --ku-button-badge-border: 2px solid var(--ku-color-gray-900);
+
+  /* Button Counter Dark Theme */
+  --ku-button-counter-bg: rgba(255, 255, 255, 0.1);
+
+  /* Button Tooltip Dark Theme */
+  --ku-button-tooltip-bg: var(--ku-color-gray-800);
+  --ku-button-tooltip-color: var(--ku-color-gray-100);
+
+  /* Button Group Dark Theme */
+  --ku-button-group-selected-bg: var(--ku-color-primary-700);
+  --ku-button-group-hover-bg: var(--ku-color-primary-900);
 }
 
 /* High Contrast Theme */

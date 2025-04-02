@@ -1,45 +1,31 @@
-import React, { createContext, useContext, useEffect, useState } from 'react';
-import './ThemeProvider.css';
+import React from 'react';
+import { ThemeVariant, lightColors } from '@ku-design-system/core';
 
-type Theme = 'light' | 'dark';
-
-interface ThemeContextValue {
-  theme: Theme;
-  toggleTheme: () => void;
-}
-
-const ThemeContext = createContext<ThemeContextValue | null>(null);
-
-export interface ThemeProviderProps {
+interface ThemeProviderProps {
   children: React.ReactNode;
-  defaultTheme?: Theme;
+  theme?: Partial<ThemeVariant>;
 }
 
-export const ThemeProvider = ({
-  children,
-  defaultTheme = 'light',
-}: ThemeProviderProps) => {
-  const [theme, setTheme] = useState<Theme>(defaultTheme);
+const defaultTheme: ThemeVariant = {
+  name: 'Light',
+  colors: lightColors,
+  isDark: false
+};
 
-  useEffect(() => {
-    document.documentElement.setAttribute('data-theme', theme);
-  }, [theme]);
-
-  const toggleTheme = () => {
-    setTheme(prev => prev === 'light' ? 'dark' : 'light');
+export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children, theme = defaultTheme }) => {
+  // Apply theme variables to the root element
+  const themeStyles = {
+    ...theme.colors,
+    '--ku-theme-mode': theme.isDark ? 'dark' : 'light',
   };
 
   return (
-    <ThemeContext.Provider value={{ theme, toggleTheme }}>
+    <div 
+      className="ku-theme-provider" 
+      data-theme={theme.isDark ? 'dark' : 'light'}
+      style={themeStyles as React.CSSProperties}
+    >
       {children}
-    </ThemeContext.Provider>
+    </div>
   );
-};
-
-export const useTheme = () => {
-  const context = useContext(ThemeContext);
-  if (!context) {
-    throw new Error('useTheme must be used within a ThemeProvider');
-  }
-  return context;
 }; 

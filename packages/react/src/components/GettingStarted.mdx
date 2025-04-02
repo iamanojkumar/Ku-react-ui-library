@@ -1,0 +1,183 @@
+# Getting Started
+
+## Installation
+
+Install the package using npm:
+
+```bash
+npm install @ku-design-system/react
+```
+
+Or using yarn:
+
+```bash
+yarn add @ku-design-system/react
+```
+
+## Setup
+
+1. Import the ThemeProvider and wrap your app:
+
+```jsx
+import { ThemeProvider } from '@ku-design-system/react';
+
+function App() {
+  return (
+    <ThemeProvider>
+      {/* Your app content */}
+    </ThemeProvider>
+  );
+}
+```
+
+2. Import the styles:
+
+```jsx
+import '@ku-design-system/react/dist/style.css';
+```
+
+## Basic Usage
+
+Here's a simple example using some basic components:
+
+```jsx
+import { Button, Stack, TextField } from '@ku-design-system/react';
+
+function LoginForm() {
+  return (
+    <Stack spacing="1rem">
+      <TextField
+        label="Email"
+        type="email"
+        placeholder="Enter your email"
+      />
+      <TextField
+        label="Password"
+        type="password"
+        placeholder="Enter your password"
+      />
+      <Button variant="primary">
+        Log In
+      </Button>
+    </Stack>
+  );
+}
+```
+
+## Theming
+
+You can customize the theme by passing a theme object to the ThemeProvider:
+
+```jsx
+import { ThemeProvider } from '@ku-design-system/react';
+
+const theme = {
+  colors: {
+    primary: '#0066ff',
+    secondary: '#6b7280',
+    // ... other color overrides
+  },
+  // ... other theme customizations
+};
+
+function App() {
+  return (
+    <ThemeProvider theme={theme}>
+      {/* Your app content */}
+    </ThemeProvider>
+  );
+}
+```
+
+## TypeScript Support
+
+The library is built with TypeScript and includes type definitions. You'll get full type support and autocompletion out of the box:
+
+```tsx
+import { Button, ButtonProps } from '@ku-design-system/react';
+
+// Props are fully typed
+const MyButton: React.FC<ButtonProps> = (props) => {
+  return <Button {...props} />;
+};
+```
+
+## Best Practices
+
+1. **Component Organization**: Group related components using the Stack or Grid components
+2. **Form Handling**: Use form components within a form element for proper accessibility
+3. **Responsive Design**: Use the responsive props on components for different screen sizes
+4. **Accessibility**: Include proper ARIA labels and descriptions
+5. **Error Handling**: Use the error states on form components for validation
+
+## Example Application
+
+Here's a more complete example showing how to use multiple components together:
+
+```jsx
+import {
+  Container,
+  Stack,
+  Card,
+  TextField,
+  Button,
+  Alert
+} from '@ku-design-system/react';
+
+function SignupForm() {
+  const [error, setError] = useState('');
+
+  return (
+    <Container maxWidth="600px">
+      <Card>
+        <Stack spacing="2rem">
+          <h1>Create Account</h1>
+          
+          {error && (
+            <Alert variant="error">
+              {error}
+            </Alert>
+          )}
+          
+          <Stack spacing="1rem">
+            <TextField
+              label="Full Name"
+              placeholder="John Doe"
+              required
+            />
+            
+            <TextField
+              label="Email"
+              type="email"
+              placeholder="john@example.com"
+              required
+            />
+            
+            <TextField
+              label="Password"
+              type="password"
+              placeholder="Enter a secure password"
+              required
+            />
+          </Stack>
+          
+          <Button 
+            variant="primary"
+            fullWidth
+            onClick={handleSignup}
+          >
+            Create Account
+          </Button>
+        </Stack>
+      </Card>
+    </Container>
+  );
+}
+```
+
+## Next Steps
+
+- Explore the component documentation
+- Check out the examples in Storybook
+- Join our community on Discord
+- Report issues on GitHub 

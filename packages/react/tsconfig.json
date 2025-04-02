@@ -13,9 +13,11 @@
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "baseUrl": ".",
+    "baseUrl": "src",
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["*"],
+      "@ku/react/*": ["*"],
+      "@ku-design-system/core/*": ["../../../core/src/*"]
     }
   },
   "include": ["src"],
