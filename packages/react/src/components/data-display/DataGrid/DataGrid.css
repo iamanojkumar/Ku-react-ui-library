@@ -1,0 +1,99 @@
+/* DataGrid Component Tokens */
+:root {
+  /* DataGrid Colors */
+  --ku-datagrid-filter-bg: var(--ku-color-gray-50, #f8fafc);
+  --ku-datagrid-filter-border: var(--ku-color-border, #e2e8f0);
+  --ku-datagrid-pagination-bg: var(--ku-color-gray-50, #f8fafc);
+  --ku-datagrid-pagination-border: var(--ku-color-border, #e2e8f0);
+  --ku-datagrid-checkbox-color: var(--ku-color-primary, #3b82f6);
+  --ku-datagrid-checkbox-border: var(--ku-color-gray-300, #d1d5db);
+
+  /* DataGrid Typography */
+  --ku-datagrid-filter-font-size: var(--ku-font-size-sm, 0.875rem);
+  --ku-datagrid-pagination-font-size: var(--ku-font-size-sm, 0.875rem);
+
+  /* DataGrid Spacing */
+  --ku-datagrid-filter-padding: var(--ku-spacing-4, 1rem);
+  --ku-datagrid-filter-gap: var(--ku-spacing-4, 1rem);
+  --ku-datagrid-pagination-padding: var(--ku-spacing-4, 1rem);
+  --ku-datagrid-pagination-gap: var(--ku-spacing-4, 1rem);
+
+  /* DataGrid Border */
+  --ku-datagrid-filter-border-radius: var(--ku-border-radius-md, 0.375rem);
+  --ku-datagrid-pagination-border-radius: var(--ku-border-radius-md, 0.375rem);
+}
+
+/* DataGrid Wrapper */
+.ku-data-grid-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--ku-spacing-4, 1rem);
+}
+
+/* DataGrid Filters */
+.ku-data-grid-filters {
+  display: flex;
+  gap: var(--ku-datagrid-filter-gap);
+  padding: var(--ku-datagrid-filter-padding);
+  background-color: var(--ku-datagrid-filter-bg);
+  border: 1px solid var(--ku-datagrid-filter-border);
+  border-radius: var(--ku-datagrid-filter-border-radius);
+}
+
+.ku-data-grid-filters input {
+  font-size: var(--ku-datagrid-filter-font-size);
+  padding: var(--ku-spacing-2, 0.5rem);
+  border: 1px solid var(--ku-datagrid-filter-border);
+  border-radius: var(--ku-border-radius-sm, 0.25rem);
+  width: 200px;
+}
+
+/* DataGrid Table */
+.ku-data-grid {
+  width: 100%;
+}
+
+/* DataGrid Checkbox */
+.ku-data-grid input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  cursor: pointer;
+  accent-color: var(--ku-datagrid-checkbox-color);
+  border: 1px solid var(--ku-datagrid-checkbox-border);
+  border-radius: var(--ku-border-radius-sm, 0.25rem);
+}
+
+/* DataGrid Pagination */
+.ku-data-grid-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--ku-datagrid-pagination-padding);
+  background-color: var(--ku-datagrid-pagination-bg);
+  border: 1px solid var(--ku-datagrid-pagination-border);
+  border-radius: var(--ku-datagrid-pagination-border-radius);
+}
+
+.ku-data-grid-pagination-info {
+  font-size: var(--ku-datagrid-pagination-font-size);
+  color: var(--ku-color-text-secondary, #64748b);
+}
+
+/* Responsive DataGrid */
+@media (max-width: 768px) {
+  .ku-data-grid-filters {
+    flex-direction: column;
+  }
+
+  .ku-data-grid-filters input {
+    width: 100%;
+  }
+
+  .ku-data-grid-pagination {
+    flex-direction: column;
+    gap: var(--ku-spacing-4, 1rem);
+    text-align: center;
+  }
+} 
