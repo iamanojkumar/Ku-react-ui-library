@@ -1,0 +1,152 @@
+import { Meta, Story, Canvas, Controls, Description } from '@storybook/blocks';
+import * as GridStories from './Grid.stories';
+import { Grid } from './Grid';
+
+<Meta of={GridStories} />
+
+# Grid
+
+The Grid component is a powerful layout system that provides a flexible and responsive way to create grid-based layouts. It supports various configurations including fixed columns, auto-fit/fill, equal heights, and responsive breakpoints.
+
+## Features
+
+- Fixed column layouts (1-12 columns)
+- Responsive breakpoints
+- Equal height grid items
+- Auto-fit and auto-fill layouts
+- Customizable gaps
+- Flexible grid item sizing
+
+## Usage
+
+```tsx
+import { Grid } from '@ku-ui/react';
+
+function MyComponent() {
+  return (
+    <Grid columns={3} gap="md" responsive>
+      <div>Grid Item 1</div>
+      <div>Grid Item 2</div>
+      <div>Grid Item 3</div>
+    </Grid>
+  );
+}
+```
+
+## Props
+
+<Controls />
+
+### Grid Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `columns` | `1 \| 2 \| 3 \| 4 \| 5 \| 6 \| 8 \| 10 \| 12` | `12` | Number of columns in the grid |
+| `gap` | `'none' \| 'xs' \| 'sm' \| 'md' \| 'lg' \| 'xl' \| '2xl'` | `'md'` | Gap between grid items |
+| `responsive` | `boolean` | `true` | Whether to make the grid responsive |
+| `equalHeight` | `boolean` | `false` | Whether to make grid items equal height |
+| `autoFit` | `boolean` | `false` | Whether to use auto-fit for responsive columns |
+| `autoFill` | `boolean` | `false` | Whether to use auto-fill for responsive columns |
+| `autoColumns` | `boolean` | `false` | Whether to use auto-columns |
+| `autoRows` | `boolean` | `false` | Whether to use auto-rows |
+
+## Examples
+
+### Basic Grid
+
+<Canvas>
+  <Story of={GridStories.Basic} />
+</Canvas>
+
+### Responsive Grid
+
+<Canvas>
+  <Story of={GridStories.Responsive} />
+</Canvas>
+
+### Equal Height Grid
+
+<Canvas>
+  <Story of={GridStories.EqualHeight} />
+</Canvas>
+
+### Auto-fit Grid
+
+<Canvas>
+  <Story of={GridStories.AutoFit} />
+</Canvas>
+
+### Auto-fill Grid
+
+<Canvas>
+  <Story of={GridStories.AutoFill} />
+</Canvas>
+
+### Different Gaps
+
+<Canvas>
+  <Story of={GridStories.DifferentGaps} />
+</Canvas>
+
+## Design Tokens
+
+The Grid component uses the following design tokens:
+
+```css
+:root {
+  --ku-grid-gap-xs: 0.25rem;
+  --ku-grid-gap-sm: 0.5rem;
+  --ku-grid-gap-md: 1rem;
+  --ku-grid-gap-lg: 1.5rem;
+  --ku-grid-gap-xl: 2rem;
+  --ku-grid-gap-2xl: 3rem;
+}
+```
+
+## Responsive Behavior
+
+The Grid component includes built-in responsive breakpoints:
+
+- **Desktop (>1024px)**: Full column layout
+- **Tablet (768px-1024px)**: 3 columns maximum
+- **Mobile (<768px)**: 2 columns maximum
+- **Small Mobile (<640px)**: 1 column
+
+## Best Practices
+
+1. **Use Appropriate Column Counts**
+   - For general layouts, use 3-4 columns
+   - For complex layouts, use 6-12 columns
+   - Consider content density and readability
+
+2. **Responsive Design**
+   - Always enable responsive mode for mobile-friendly layouts
+   - Test layouts at different breakpoints
+   - Use auto-fit/auto-fill for dynamic content
+
+3. **Gap Selection**
+   - Use smaller gaps (xs, sm) for dense content
+   - Use larger gaps (lg, xl) for content that needs breathing room
+   - Consider visual hierarchy when selecting gap sizes
+
+4. **Equal Height**
+   - Enable equal height when grid items should align
+   - Use with caution for varying content lengths
+   - Consider content overflow behavior
+
+## Accessibility
+
+The Grid component follows accessibility best practices:
+
+- Uses semantic HTML elements
+- Maintains proper spacing for touch targets
+- Preserves content hierarchy
+- Supports keyboard navigation
+- Maintains sufficient color contrast
+
+## Related Components
+
+- [Container](/docs/layout-container--docs)
+- [Flex](/docs/layout-flex--docs)
+- [Stack](/docs/layout-stack--docs)
+- [Section](/docs/layout-section--docs) 
