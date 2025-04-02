@@ -63,7 +63,22 @@
   --ku-border-width-thick: 4px;
 
   /* Brand Colors */
+
+  --ku-color-brand-primary: #326F32;
+
+  --ku-color-brand-primary-shade-1: #dbeddb;
+  --ku-color-brand-primary-shade-2: #c3e1c3;
+  --ku-color-brand-primary-shade-3: #a5d3a5;
+  --ku-color-brand-primary-shade-4: #87c487;
+  --ku-color-brand-primary-shade-5: #69b569;
+  --ku-color-brand-primary-shade-6: #3f8a3f;
+  --ku-color-brand-primary-shade-7: #326f32;
+  --ku-color-brand-primary-shade-8: #265326;
+  --ku-color-brand-primary-shade-9: #193719;
+  --ku-color-brand-primary-shade-10: #0f210f;
+=======
   --ku-color-brand-primary: #007323;
+
 
   /* Background Colors */
   --ku-color-background-surface-1: #fbfdff;
@@ -178,7 +193,11 @@
 
   /* Functional Color Tokens */
   --ku-color-primary-enabled: var(--ku-color-brand-primary);
+
+  --ku-color-primary-hover: var(--ku-color-brand-primary-shade-8);
+=======
   --ku-color-primary-hover: var(--ku-color-green-1100);
+
   --ku-color-primary-selected: var(--ku-color-blue-1200);
   --ku-color-primary-focus-visible: var(--ku-color-brand-primary);
   --ku-color-primary-focus-ring: rgba(0, 102, 255, 0.25);

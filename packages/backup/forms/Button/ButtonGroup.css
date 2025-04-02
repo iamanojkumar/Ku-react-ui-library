@@ -1,0 +1,90 @@
+.ku-button-group {
+  display: inline-flex;
+  gap: var(--ku-button-group-gap);
+}
+
+.ku-button-group--radio,
+.ku-button-group--checkbox {
+  border-radius: var(--ku-button-group-border-radius);
+  background-color: var(--ku-button-group-bg);
+  padding: var(--ku-button-group-spacing);
+}
+
+/* Remove individual button borders between grouped buttons */
+.ku-button-group .ku-button {
+  border-radius: 0;
+  margin: 0;
+}
+
+.ku-button-group .ku-button:not(:last-child) {
+  border-right-width: 0;
+}
+
+/* Restore border radius for first and last buttons */
+.ku-button-group .ku-button:first-child {
+  border-top-left-radius: var(--ku-button-group-border-radius);
+  border-bottom-left-radius: var(--ku-button-group-border-radius);
+}
+
+.ku-button-group .ku-button:last-child {
+  border-top-right-radius: var(--ku-button-group-border-radius);
+  border-bottom-right-radius: var(--ku-button-group-border-radius);
+}
+
+/* Selected state styling */
+.ku-button-group .ku-button[aria-pressed="true"] {
+  background-color: var(--ku-button-group-selected-bg);
+  color: var(--ku-button-group-selected-color);
+  border-color: var(--ku-button-group-selected-border);
+}
+
+.ku-button-group .ku-button:hover:not([aria-pressed="true"]):not(:disabled) {
+  background-color: var(--ku-button-group-hover-bg);
+  border-color: var(--ku-button-group-hover-border);
+}
+
+/* Focus state for button groups */
+.ku-button-group .ku-button:focus-visible {
+  outline-color: var(--ku-button-group-focus-ring-color);
+  z-index: 1;
+}
+
+/* Vertical button groups */
+.ku-button-group--vertical {
+  flex-direction: column;
+}
+
+.ku-button-group--vertical .ku-button {
+  width: 100%;
+}
+
+.ku-button-group--vertical .ku-button:not(:last-child) {
+  border-bottom-width: 0;
+  border-right-width: var(--ku-button-border-width);
+}
+
+.ku-button-group--vertical .ku-button:first-child {
+  border-radius: var(--ku-button-group-border-radius) var(--ku-button-group-border-radius) 0 0;
+}
+
+.ku-button-group--vertical .ku-button:last-child {
+  border-radius: 0 0 var(--ku-button-group-border-radius) var(--ku-button-group-border-radius);
+}
+
+/* Dark theme adjustments */
+[data-theme="dark"] .ku-button-group .ku-button[aria-pressed="true"] {
+  background-color: var(--ku-button-group-selected-bg);
+  color: var(--ku-button-group-selected-color);
+  border-color: var(--ku-button-group-selected-border);
+}
+
+/* High contrast mode */
+@media (forced-colors: active) {
+  .ku-button-group .ku-button {
+    border: var(--ku-button-border-width) solid transparent;
+  }
+
+  .ku-button-group .ku-button[aria-pressed="true"] {
+    border-color: ButtonText;
+  }
+} 

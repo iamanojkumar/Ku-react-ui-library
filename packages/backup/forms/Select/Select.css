@@ -1,0 +1,184 @@
+.ku-select {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ku-spacing-1);
+  width: 100%;
+}
+
+.ku-select__label {
+  color: var(--ku-color-text-primary);
+  font-size: var(--ku-font-size-sm);
+  font-weight: var(--ku-font-weight-medium);
+  line-height: var(--ku-line-height-normal);
+  cursor: pointer;
+}
+
+.ku-select__label--hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.ku-select__label--required::after {
+  content: "*";
+  color: var(--ku-color-alert-2);
+  margin-left: var(--ku-spacing-1);
+}
+
+.ku-select__input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.ku-select__icon {
+  position: absolute;
+  left: var(--ku-spacing-3);
+  color: var(--ku-color-text-secondary);
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+}
+
+.ku-select__prefix {
+  position: absolute;
+  left: var(--ku-spacing-3);
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+}
+
+.ku-select__input {
+  width: 100%;
+  height: 40px;
+  padding: 0 var(--ku-spacing-10) 0 var(--ku-spacing-3);
+  border: 1px solid var(--ku-color-border-2);
+  border-radius: var(--ku-border-radius-md);
+  background-color: var(--ku-color-background-surface-1);
+  color: var(--ku-color-text-primary);
+  font-size: var(--ku-font-size-sm);
+  line-height: var(--ku-line-height-normal);
+  cursor: pointer;
+  appearance: none;
+  transition: all var(--ku-duration-fast) var(--ku-ease-in-out);
+}
+
+.ku-select--has-icon .ku-select__input {
+  padding-left: calc(var(--ku-spacing-3) * 2 + 16px);
+}
+
+.ku-select--has-prefix .ku-select__input {
+  padding-left: calc(var(--ku-spacing-3) * 2 + 24px);
+}
+
+.ku-select__input:hover:not(:disabled) {
+  border-color: var(--ku-color-border-1);
+  background-color: var(--ku-color-background-surface-2);
+}
+
+.ku-select__input:focus {
+  outline: none;
+  border-color: var(--ku-color-brand-primary);
+  box-shadow: 0 0 0 3px var(--ku-color-primary-focus-ring);
+}
+
+.ku-select__chevron {
+  position: absolute;
+  right: var(--ku-spacing-3);
+  color: var(--ku-color-text-secondary);
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+  transition: transform var(--ku-duration-fast) var(--ku-ease-in-out);
+}
+
+.ku-select__input:focus + .ku-select__chevron {
+  transform: rotate(180deg);
+  color: var(--ku-color-brand-primary);
+}
+
+.ku-select__error-icon {
+  position: absolute;
+  right: calc(var(--ku-spacing-3) + 20px);
+  color: var(--ku-color-alert-2);
+  display: flex;
+  align-items: center;
+}
+
+.ku-select--error .ku-select__input {
+  border-color: var(--ku-color-alert-2);
+  padding-right: calc(var(--ku-spacing-10) + 20px);
+}
+
+.ku-select--error .ku-select__input:focus {
+  box-shadow: 0 0 0 3px var(--ku-color-alert-focus-ring);
+}
+
+.ku-select--disabled .ku-select__input {
+  background-color: var(--ku-color-background-surface-3);
+  border-color: var(--ku-color-border-1);
+  color: var(--ku-color-text-tertiary);
+  cursor: not-allowed;
+}
+
+.ku-select--disabled .ku-select__label,
+.ku-select--disabled .ku-select__icon,
+.ku-select--disabled .ku-select__prefix,
+.ku-select--disabled .ku-select__chevron {
+  color: var(--ku-color-text-tertiary);
+  cursor: not-allowed;
+}
+
+.ku-select__helper {
+  color: var(--ku-color-text-secondary);
+  font-size: var(--ku-font-size-sm);
+  line-height: var(--ku-line-height-normal);
+}
+
+.ku-select__error {
+  color: var(--ku-color-alert-2);
+  font-size: var(--ku-font-size-sm);
+  line-height: var(--ku-line-height-normal);
+  display: flex;
+  align-items: center;
+  gap: var(--ku-spacing-1);
+}
+
+/* Dark theme adjustments */
+[data-theme="dark"] .ku-select__input {
+  background-color: var(--ku-color-background-surface-2);
+  border-color: var(--ku-color-border-2);
+}
+
+[data-theme="dark"] .ku-select__input:hover:not(:disabled) {
+  border-color: var(--ku-color-border-1);
+  background-color: var(--ku-color-background-surface-3);
+}
+
+[data-theme="dark"] .ku-select--disabled .ku-select__input {
+  background-color: var(--ku-color-background-surface-4);
+  border-color: var(--ku-color-border-1);
+}
+
+/* High contrast mode */
+@media (forced-colors: active) {
+  .ku-select__input {
+    border: 1px solid ButtonBorder;
+  }
+
+  .ku-select__input:focus {
+    outline: 2px solid Highlight;
+    outline-offset: 2px;
+  }
+
+  .ku-select--disabled .ku-select__input {
+    border-color: GrayText;
+  }
+} 

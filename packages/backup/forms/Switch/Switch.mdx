@@ -1,0 +1,120 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs';
+import { Switch } from './Switch';
+
+<Meta title="Components/Forms/Switch" component={Switch} />
+
+# Switch
+
+A Switch component is used as an alternative to a checkbox when you want to toggle between two states.
+
+## Features
+
+- Multiple sizes (sm, md, lg)
+- Support for labels
+- Keyboard navigation
+- Focus visible styles
+- Dark theme support
+- High contrast mode support
+- Reduced motion support
+
+## Usage
+
+```jsx
+import { Switch } from '@ku-design-system/react';
+
+function Example() {
+  const [checked, setChecked] = React.useState(false);
+  
+  return (
+    <Switch
+      checked={checked}
+      onChange={(e) => setChecked(e.target.checked)}
+      label="Enable notifications"
+    />
+  );
+}
+```
+
+## Props
+
+<ArgsTable of={Switch} />
+
+## Examples
+
+### Basic Switch
+
+<Canvas>
+  <Story id="components-forms-switch--default" />
+</Canvas>
+
+### Sizes
+
+<Canvas>
+  <Story id="components-forms-switch--sizes" />
+</Canvas>
+
+### With Labels
+
+<Canvas>
+  <Story id="components-forms-switch--with-labels" />
+</Canvas>
+
+### Disabled State
+
+<Canvas>
+  <Story id="components-forms-switch--disabled" />
+</Canvas>
+
+## Accessibility
+
+The Switch component follows WAI-ARIA guidelines for toggle buttons:
+
+- Uses `role="switch"` to identify the element as a switch
+- Supports keyboard navigation with Space and Enter keys
+- Provides visible focus indicators
+- Includes proper ARIA attributes for state and labels
+- Supports screen readers with appropriate announcements
+
+## Design Tokens
+
+The Switch component uses the following design tokens:
+
+### Base
+- `--ku-switch-width-sm`: Width for small size
+- `--ku-switch-width-md`: Width for medium size
+- `--ku-switch-width-lg`: Width for large size
+- `--ku-switch-height-sm`: Height for small size
+- `--ku-switch-height-md`: Height for medium size
+- `--ku-switch-height-lg`: Height for large size
+- `--ku-switch-thumb-size-sm`: Thumb size for small switch
+- `--ku-switch-thumb-size-md`: Thumb size for medium switch
+- `--ku-switch-thumb-size-lg`: Thumb size for large switch
+- `--ku-switch-padding`: Internal padding
+- `--ku-switch-border-width`: Border width
+- `--ku-switch-border-radius`: Border radius
+
+### Colors
+- `--ku-switch-bg-unchecked`: Background color when unchecked
+- `--ku-switch-bg-checked`: Background color when checked
+- `--ku-switch-bg-disabled`: Background color when disabled
+- `--ku-switch-thumb-bg`: Thumb background color
+- `--ku-switch-thumb-shadow`: Thumb shadow
+- `--ku-switch-border-color-unchecked`: Border color when unchecked
+- `--ku-switch-border-color-checked`: Border color when checked
+- `--ku-switch-border-color-disabled`: Border color when disabled
+
+### Focus
+- `--ku-switch-focus-ring-width`: Focus ring width
+- `--ku-switch-focus-ring-color`: Focus ring color
+
+### Animation
+- `--ku-switch-transition-duration`: Transition duration
+- `--ku-switch-transition-timing`: Transition timing function
+
+### Label
+- `--ku-switch-label-gap`: Gap between switch and label
+- `--ku-switch-label-font-size`: Label font size
+- `--ku-switch-label-font-weight`: Label font weight
+- `--ku-switch-label-line-height`: Label line height
+- `--ku-switch-label-color`: Label color
+- `--ku-switch-label-disabled-color`: Label color when disabled 

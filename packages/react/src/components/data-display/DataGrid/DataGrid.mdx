@@ -1,0 +1,184 @@
+import { Meta, Story, Controls, Canvas } from '@storybook/blocks';
+import * as DataGridStories from './DataGrid.stories';
+import { DataGrid } from './DataGrid';
+
+<Meta of={DataGridStories} />
+
+# DataGrid
+
+The DataGrid component is an advanced table component that provides features like pagination, filtering, sorting, and row selection. It's built on top of the base Table component and adds powerful data management capabilities.
+
+## Features
+
+- Pagination support
+- Column filtering
+- Sortable columns
+- Row selection
+- Custom cell rendering
+- Responsive design
+- Custom styling through CSS classes
+
+## Usage
+
+```tsx
+import { DataGrid } from '@ku-design-system/react';
+
+interface User {
+  id: string;
+  name: string;
+  email: string;
+  role: string;
+  status: string;
+}
+
+function MyDataGrid() {
+  const data: User[] = [
+    { id: '1', name: 'John Doe', email: 'john@example.com', role: 'Admin', status: 'Active' },
+    { id: '2', name: 'Jane Smith', email: 'jane@example.com', role: 'User', status: 'Active' },
+  ];
+
+  const columns = [
+    {
+      key: 'name',
+      title: 'Name',
+      sortable: true,
+      filterable: true,
+    },
+    {
+      key: 'email',
+      title: 'Email',
+      sortable: true,
+      filterable: true,
+    },
+    {
+      key: 'role',
+      title: 'Role',
+      sortable: true,
+      filterable: true,
+    },
+    {
+      key: 'status',
+      title: 'Status',
+      sortable: true,
+      filterable: true,
+      render: (item) => (
+        <span style={{ color: item.status === 'Active' ? 'green' : 'red' }}>
+          {item.status}
+        </span>
+      ),
+    },
+  ];
+
+  return (
+    <DataGrid<User>
+      data={data}
+      columns={columns}
+      pagination
+      filters
+      selectable
+    />
+  );
+}
+```
+
+## Props
+
+### DataGrid Props
+
+<Controls />
+
+### Column Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| key | string | - | Unique key for the column |
+| title | string | - | Display title for the column |
+| render | (item: T) => ReactNode | - | Function to render cell content |
+| sortable | boolean | false | Whether the column is sortable |
+| filterable | boolean | false | Whether the column is filterable |
+| width | string \| number | - | Width of the column |
+
+## Examples
+
+### Basic DataGrid
+
+<Canvas>
+  <Story of={DataGridStories.Basic} />
+</Canvas>
+
+### With Pagination
+
+<Canvas>
+  <Story of={DataGridStories.WithPagination} />
+</Canvas>
+
+### With Filters
+
+<Canvas>
+  <Story of={DataGridStories.WithFilters} />
+</Canvas>
+
+### Selectable Rows
+
+<Canvas>
+  <Story of={DataGridStories.Selectable} />
+</Canvas>
+
+### Full Featured
+
+<Canvas>
+  <Story of={DataGridStories.FullFeatured} />
+</Canvas>
+
+### Custom Styling
+
+<Canvas>
+  <Story of={DataGridStories.CustomStyling} />
+</Canvas>
+
+### Controlled State
+
+<Canvas>
+  <Story of={DataGridStories.Controlled} />
+</Canvas>
+
+## Accessibility
+
+The DataGrid component follows accessibility best practices:
+
+- Uses semantic HTML table elements
+- Supports keyboard navigation
+- Provides visual feedback for interactive elements
+- Maintains proper ARIA attributes
+- Ensures sufficient color contrast
+- Supports screen readers with proper roles and labels
+
+## Design Tokens
+
+The DataGrid component uses the following design tokens:
+
+```css
+:root {
+  /* DataGrid Colors */
+  --ku-datagrid-filter-bg: var(--ku-color-gray-50);
+  --ku-datagrid-filter-border: var(--ku-color-border);
+  --ku-datagrid-pagination-bg: var(--ku-color-gray-50);
+  --ku-datagrid-pagination-border: var(--ku-color-border);
+  --ku-datagrid-checkbox-color: var(--ku-color-primary);
+  --ku-datagrid-checkbox-border: var(--ku-color-gray-300);
+
+  /* DataGrid Typography */
+  --ku-datagrid-filter-font-size: var(--ku-font-size-sm);
+  --ku-datagrid-pagination-font-size: var(--ku-font-size-sm);
+
+  /* DataGrid Spacing */
+  --ku-datagrid-filter-padding: var(--ku-spacing-4);
+  --ku-datagrid-filter-gap: var(--ku-spacing-4);
+  --ku-datagrid-pagination-padding: var(--ku-spacing-4);
+  --ku-datagrid-pagination-gap: var(--ku-spacing-4);
+
+  /* DataGrid Border */
+  --ku-datagrid-filter-border-radius: var(--ku-border-radius-md);
+  --ku-datagrid-pagination-border-radius: var(--ku-border-radius-md);
+}
+``` 
